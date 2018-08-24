@@ -29,14 +29,14 @@ public class generateMain {
 
 //        map = new HashMap<>();
 //        map.put("tableName","sys_permission");
-//        map.put("modules","sys");
+//        map.put("modules","process");
 //        maps.add(map);
 //
 //        map = new HashMap<>();
 //        map.put("tableName","sys_menu");
-//        map.put("modules","sys");
+//        map.put("modules","process");
 //        maps.add(map);
-//
+
         for(Map<String,String> map1 : maps) {
             GenerateCoreUtil.generateAll(map1.get("tableName"),map1.get("modules"));
         }
@@ -72,18 +72,43 @@ public class generateMain {
         List<Map<String,String>> maps = new ArrayList<>();
         Map<String,String> map;
 
-//        map = new HashMap<>();
-//        map.put("tableName","sys_permission");
-//        map.put("modules","sys");
-//        maps.add(map);
-//
-//        map = new HashMap<>();
-//        map.put("tableName","sys_menu");
-//        map.put("modules","sys");
-//        maps.add(map);
+        map = new HashMap<>();
+        map.put("tableName","sys_permission");
+        map.put("modules","sys");
+        maps.add(map);
+
+        map = new HashMap<>();
+        map.put("tableName","sys_menu");
+        map.put("modules","sys");
+        maps.add(map);
 
         for(Map<String,String> map1 : maps) {
             GenerateCoreUtil.createEntityClass(map1.get("tableName"),map1.get("modules"));
+        }
+    }
+
+    /**
+     *只生成entity,dto,vo文件，用于(需要生成多个表的文件时加入mapList中即可)
+     */
+    @Test
+    public void generateDomain() throws Exception {
+        List<Map<String,String>> maps = new ArrayList<>();
+        Map<String,String> map;
+
+        map = new HashMap<>();
+        map.put("tableName","proc_setting");
+        map.put("modules","process");
+        maps.add(map);
+
+        map = new HashMap<>();
+        map.put("tableName","proc_decision");
+        map.put("modules","process");
+        maps.add(map);
+
+        for(Map<String,String> map1 : maps) {
+            GenerateCoreUtil.createEntityClass(map1.get("tableName"),map1.get("modules"));
+            GenerateCoreUtil.createDTOClass(map1.get("tableName"),map1.get("modules"));
+            GenerateCoreUtil.createVOClass(map1.get("tableName"),map1.get("modules"));
         }
     }
     /**
@@ -97,9 +122,9 @@ public class generateMain {
     public void generateViewSQL() throws Exception {
         List<String> tableList;
         tableList = new ArrayList<>();
-        tableList.add("role");
-        tableList.add("user");
-        String s = POIUtil.generateViewSql(new File(SysBaseService.class.getResource("/sql/baoli.xls").getFile()).getAbsolutePath(),tableList);
+        tableList.add("proc_setting");
+        tableList.add("proc_decision");
+        String s = POIUtil.generateViewSql(new File(SysBaseService.class.getResource("/sql/generate.xls").getFile()).getAbsolutePath(),tableList);
         System.out.println(s);
     }
 
