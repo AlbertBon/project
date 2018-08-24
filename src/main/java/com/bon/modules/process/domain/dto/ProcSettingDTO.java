@@ -84,6 +84,12 @@ public class ProcSettingDTO extends BaseDTO<ProcSetting> implements Serializable
     @ApiModelProperty(value = "处理方法")
     private String actionMethod;
 
+    @ApiModelProperty(value = "创建时间")
+    private Date gmtCreate;
+
+    @ApiModelProperty(value = "最后一次更新时间")
+    private Date gmtModified;
+
     public Long getNodeId() {
         return nodeId;
     }
@@ -258,6 +264,22 @@ public class ProcSettingDTO extends BaseDTO<ProcSetting> implements Serializable
 
     public void setActionMethod(String actionMethod) {
         this.actionMethod = actionMethod;
+    }
+
+    public Date getGmtCreate() {
+        return gmtCreate;
+    }
+
+    public void setGmtCreate(Date gmtCreate) {
+        this.gmtCreate = gmtCreate;
+    }
+
+    public Date getGmtModified() {
+        return gmtModified;
+    }
+
+    public void setGmtModified(Date gmtModified) {
+        this.gmtModified = gmtModified;
     }
 
 }

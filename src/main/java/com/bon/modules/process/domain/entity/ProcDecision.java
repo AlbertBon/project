@@ -47,6 +47,14 @@ public class ProcDecision implements Serializable{
     @ApiModelProperty(value = "下一节点，无下一节点为0，表示结束")
     private Integer nextNodeId;
 
+    @ApiModelProperty(value = "创建时间")
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    private Date gmtCreate;
+
+    @ApiModelProperty(value = "最后一次更新时间")
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    private Date gmtModified;
+
     public Long getDecisionId() {
         return decisionId;
     }
@@ -109,6 +117,22 @@ public class ProcDecision implements Serializable{
 
     public void setNextNodeId(Integer nextNodeId) {
         this.nextNodeId = nextNodeId;
+    }
+
+    public Date getGmtCreate() {
+        return gmtCreate;
+    }
+
+    public void setGmtCreate(Date gmtCreate) {
+        this.gmtCreate = gmtCreate;
+    }
+
+    public Date getGmtModified() {
+        return gmtModified;
+    }
+
+    public void setGmtModified(Date gmtModified) {
+        this.gmtModified = gmtModified;
     }
 
 }

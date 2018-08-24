@@ -27,10 +27,10 @@ public class generateMain {
         List<Map<String,String>> maps = new ArrayList<>();
         Map<String,String> map;
 
-//        map = new HashMap<>();
-//        map.put("tableName","sys_permission");
-//        map.put("modules","process");
-//        maps.add(map);
+        map = new HashMap<>();
+        map.put("tableName","proc_setting");
+        map.put("modules","process");
+        maps.add(map);
 //
 //        map = new HashMap<>();
 //        map.put("tableName","sys_menu");
@@ -88,10 +88,10 @@ public class generateMain {
     }
 
     /**
-     *只生成entity,dto,vo文件，用于(需要生成多个表的文件时加入mapList中即可)
+     *只生成entity,dto,vo,service,dao文件，用于(需要生成多个表的文件时加入mapList中即可)
      */
     @Test
-    public void generateDomain() throws Exception {
+    public void generateService() throws Exception {
         List<Map<String,String>> maps = new ArrayList<>();
         Map<String,String> map;
 
@@ -108,7 +108,12 @@ public class generateMain {
         for(Map<String,String> map1 : maps) {
             GenerateCoreUtil.createEntityClass(map1.get("tableName"),map1.get("modules"));
             GenerateCoreUtil.createDTOClass(map1.get("tableName"),map1.get("modules"));
+            GenerateCoreUtil.createListDTOClass(map1.get("tableName"),map1.get("modules"));
             GenerateCoreUtil.createVOClass(map1.get("tableName"),map1.get("modules"));
+            GenerateCoreUtil.createMapperClass(map1.get("tableName"),map1.get("modules"));
+            GenerateCoreUtil.createMapperXML(map1.get("tableName"),map1.get("modules"));
+            GenerateCoreUtil.createServiceClass(map1.get("tableName"),map1.get("modules"));
+            GenerateCoreUtil.createServiceImplClass(map1.get("tableName"),map1.get("modules"));
         }
     }
     /**
@@ -124,7 +129,7 @@ public class generateMain {
         tableList = new ArrayList<>();
         tableList.add("proc_setting");
         tableList.add("proc_decision");
-        String s = POIUtil.generateViewSql(new File(SysBaseService.class.getResource("/sql/generate.xls").getFile()).getAbsolutePath(),tableList);
+        String s = POIUtil.generateViewSql(new File(SysBaseService.class.getResource("/sql/generate.xls").getFile()).getAbsolutePath(),null);
         System.out.println(s);
     }
 
@@ -139,8 +144,8 @@ public class generateMain {
     @Test
     public void generateExtend() throws Exception {
         GenerateCoreUtil generateUtil = new GenerateCoreUtil();
-        String tableName = "test";
-        String modules = "app";
+        String tableName = "proc_setting";
+        String modules = "process";
         //实体类文件
         generateUtil.createEntityClass(tableName,modules);
         //参数类文件
@@ -159,7 +164,7 @@ public class generateMain {
         generateUtil.createMapperXML(tableName,modules);
         //控制层文件
         generateUtil.createControllerClass(tableName,modules);
-        //vue文件
-        generateUtil.generateVUE(tableName,modules);
+//        //vue文件
+//        generateUtil.generateVUE(tableName,modules);
     }
 }

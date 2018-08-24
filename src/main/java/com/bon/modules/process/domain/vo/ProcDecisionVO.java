@@ -29,6 +29,10 @@ public class ProcDecisionVO implements Serializable{
 
     private Integer nextNodeId;
 
+    private Date gmtCreate;
+
+    private Date gmtModified;
+
     public Long getDecisionId() {
         return decisionId;
     }
@@ -91,6 +95,22 @@ public class ProcDecisionVO implements Serializable{
 
     public void setNextNodeId(Integer nextNodeId) {
         this.nextNodeId = nextNodeId;
+    }
+
+    public Date getGmtCreate() {
+        return gmtCreate;
+    }
+
+    public void setGmtCreate(Date gmtCreate) {
+        this.gmtCreate = gmtCreate;
+    }
+
+    public Date getGmtModified() {
+        return gmtModified;
+    }
+
+    public void setGmtModified(Date gmtModified) {
+        this.gmtModified = gmtModified;
     }
 
 }

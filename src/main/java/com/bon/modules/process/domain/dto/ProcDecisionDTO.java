@@ -42,6 +42,12 @@ public class ProcDecisionDTO extends BaseDTO<ProcDecision> implements Serializab
     @ApiModelProperty(value = "下一节点，无下一节点为0，表示结束")
     private Integer nextNodeId;
 
+    @ApiModelProperty(value = "创建时间")
+    private Date gmtCreate;
+
+    @ApiModelProperty(value = "最后一次更新时间")
+    private Date gmtModified;
+
     public Long getDecisionId() {
         return decisionId;
     }
@@ -104,6 +110,22 @@ public class ProcDecisionDTO extends BaseDTO<ProcDecision> implements Serializab
 
     public void setNextNodeId(Integer nextNodeId) {
         this.nextNodeId = nextNodeId;
+    }
+
+    public Date getGmtCreate() {
+        return gmtCreate;
+    }
+
+    public void setGmtCreate(Date gmtCreate) {
+        this.gmtCreate = gmtCreate;
+    }
+
+    public Date getGmtModified() {
+        return gmtModified;
+    }
+
+    public void setGmtModified(Date gmtModified) {
+        this.gmtModified = gmtModified;
     }
 
 }

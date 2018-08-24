@@ -57,6 +57,10 @@ public class ProcSettingVO implements Serializable{
 
     private String actionMethod;
 
+    private Date gmtCreate;
+
+    private Date gmtModified;
+
     public Long getNodeId() {
         return nodeId;
     }
@@ -231,6 +235,22 @@ public class ProcSettingVO implements Serializable{
 
     public void setActionMethod(String actionMethod) {
         this.actionMethod = actionMethod;
+    }
+
+    public Date getGmtCreate() {
+        return gmtCreate;
+    }
+
+    public void setGmtCreate(Date gmtCreate) {
+        this.gmtCreate = gmtCreate;
+    }
+
+    public Date getGmtModified() {
+        return gmtModified;
+    }
+
+    public void setGmtModified(Date gmtModified) {
+        this.gmtModified = gmtModified;
     }
 
 }
