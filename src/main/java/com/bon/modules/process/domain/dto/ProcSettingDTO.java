@@ -8,7 +8,7 @@ import com.bon.common.domain.dto.BaseDTO;
 import com.bon.modules.process.domain.entity.ProcSetting;
 
 /**
- * @Created：2018-08-24
+ * @Created：2018-08-25
  * @Author Albert
  * @Version: 1.0
  * @Description: ProcSetting参数类
@@ -21,11 +21,11 @@ public class ProcSettingDTO extends BaseDTO<ProcSetting> implements Serializable
     @ApiModelProperty(value = "ID")
     private Long nodeId;
 
-    @ApiModelProperty(value = "关联customer表主键")
-    private Integer objectId;
+    @ApiModelProperty(value = "创建时间")
+    private Date gmtCreate;
 
-    @ApiModelProperty(value = "表单类型ID")
-    private Integer formTypeId;
+    @ApiModelProperty(value = "最后一次更新时间")
+    private Date gmtModified;
 
     @ApiModelProperty(value = "主管部门")
     private Integer departmentId;
@@ -84,12 +84,6 @@ public class ProcSettingDTO extends BaseDTO<ProcSetting> implements Serializable
     @ApiModelProperty(value = "处理方法")
     private String actionMethod;
 
-    @ApiModelProperty(value = "创建时间")
-    private Date gmtCreate;
-
-    @ApiModelProperty(value = "最后一次更新时间")
-    private Date gmtModified;
-
     public Long getNodeId() {
         return nodeId;
     }
@@ -98,20 +92,20 @@ public class ProcSettingDTO extends BaseDTO<ProcSetting> implements Serializable
         this.nodeId = nodeId;
     }
 
-    public Integer getObjectId() {
-        return objectId;
+    public Date getGmtCreate() {
+        return gmtCreate;
     }
 
-    public void setObjectId(Integer objectId) {
-        this.objectId = objectId;
+    public void setGmtCreate(Date gmtCreate) {
+        this.gmtCreate = gmtCreate;
     }
 
-    public Integer getFormTypeId() {
-        return formTypeId;
+    public Date getGmtModified() {
+        return gmtModified;
     }
 
-    public void setFormTypeId(Integer formTypeId) {
-        this.formTypeId = formTypeId;
+    public void setGmtModified(Date gmtModified) {
+        this.gmtModified = gmtModified;
     }
 
     public Integer getDepartmentId() {
@@ -264,22 +258,6 @@ public class ProcSettingDTO extends BaseDTO<ProcSetting> implements Serializable
 
     public void setActionMethod(String actionMethod) {
         this.actionMethod = actionMethod;
-    }
-
-    public Date getGmtCreate() {
-        return gmtCreate;
-    }
-
-    public void setGmtCreate(Date gmtCreate) {
-        this.gmtCreate = gmtCreate;
-    }
-
-    public Date getGmtModified() {
-        return gmtModified;
-    }
-
-    public void setGmtModified(Date gmtModified) {
-        this.gmtModified = gmtModified;
     }
 
 }

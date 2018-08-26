@@ -4,7 +4,7 @@ import java.util.*;
 import java.io.Serializable;
 
 /**
- * @Created：2018-08-24
+ * @Created：2018-08-25
  * @Author Albert
  * @Version: 1.0
  * @Description: ProcDecision视图类
@@ -15,9 +15,9 @@ public class ProcDecisionVO implements Serializable{
 
     private Long decisionId;
 
-    private Integer objectId;
+    private Date gmtCreate;
 
-    private String name;
+    private Date gmtModified;
 
     private String type;
 
@@ -29,10 +29,6 @@ public class ProcDecisionVO implements Serializable{
 
     private Integer nextNodeId;
 
-    private Date gmtCreate;
-
-    private Date gmtModified;
-
     public Long getDecisionId() {
         return decisionId;
     }
@@ -41,20 +37,20 @@ public class ProcDecisionVO implements Serializable{
         this.decisionId = decisionId;
     }
 
-    public Integer getObjectId() {
-        return objectId;
+    public Date getGmtCreate() {
+        return gmtCreate;
     }
 
-    public void setObjectId(Integer objectId) {
-        this.objectId = objectId;
+    public void setGmtCreate(Date gmtCreate) {
+        this.gmtCreate = gmtCreate;
     }
 
-    public String getName() {
-        return name;
+    public Date getGmtModified() {
+        return gmtModified;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setGmtModified(Date gmtModified) {
+        this.gmtModified = gmtModified;
     }
 
     public String getType() {
@@ -95,22 +91,6 @@ public class ProcDecisionVO implements Serializable{
 
     public void setNextNodeId(Integer nextNodeId) {
         this.nextNodeId = nextNodeId;
-    }
-
-    public Date getGmtCreate() {
-        return gmtCreate;
-    }
-
-    public void setGmtCreate(Date gmtCreate) {
-        this.gmtCreate = gmtCreate;
-    }
-
-    public Date getGmtModified() {
-        return gmtModified;
-    }
-
-    public void setGmtModified(Date gmtModified) {
-        this.gmtModified = gmtModified;
     }
 
 }

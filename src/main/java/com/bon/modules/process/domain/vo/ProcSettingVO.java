@@ -4,7 +4,7 @@ import java.util.*;
 import java.io.Serializable;
 
 /**
- * @Created：2018-08-24
+ * @Created：2018-08-25
  * @Author Albert
  * @Version: 1.0
  * @Description: ProcSetting视图类
@@ -15,9 +15,9 @@ public class ProcSettingVO implements Serializable{
 
     private Long nodeId;
 
-    private Integer objectId;
+    private Date gmtCreate;
 
-    private Integer formTypeId;
+    private Date gmtModified;
 
     private Integer departmentId;
 
@@ -57,10 +57,6 @@ public class ProcSettingVO implements Serializable{
 
     private String actionMethod;
 
-    private Date gmtCreate;
-
-    private Date gmtModified;
-
     public Long getNodeId() {
         return nodeId;
     }
@@ -69,20 +65,20 @@ public class ProcSettingVO implements Serializable{
         this.nodeId = nodeId;
     }
 
-    public Integer getObjectId() {
-        return objectId;
+    public Date getGmtCreate() {
+        return gmtCreate;
     }
 
-    public void setObjectId(Integer objectId) {
-        this.objectId = objectId;
+    public void setGmtCreate(Date gmtCreate) {
+        this.gmtCreate = gmtCreate;
     }
 
-    public Integer getFormTypeId() {
-        return formTypeId;
+    public Date getGmtModified() {
+        return gmtModified;
     }
 
-    public void setFormTypeId(Integer formTypeId) {
-        this.formTypeId = formTypeId;
+    public void setGmtModified(Date gmtModified) {
+        this.gmtModified = gmtModified;
     }
 
     public Integer getDepartmentId() {
@@ -235,22 +231,6 @@ public class ProcSettingVO implements Serializable{
 
     public void setActionMethod(String actionMethod) {
         this.actionMethod = actionMethod;
-    }
-
-    public Date getGmtCreate() {
-        return gmtCreate;
-    }
-
-    public void setGmtCreate(Date gmtCreate) {
-        this.gmtCreate = gmtCreate;
-    }
-
-    public Date getGmtModified() {
-        return gmtModified;
-    }
-
-    public void setGmtModified(Date gmtModified) {
-        this.gmtModified = gmtModified;
     }
 
 }

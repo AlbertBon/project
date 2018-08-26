@@ -11,8 +11,8 @@ import java.util.Properties;
  * @author: Bon
  * @create: 2018-05-16 12:41
  **/
-public class GeneratePropertyUtil {
-    private static final MyLog log = MyLog.getLog(GeneratePropertyUtil.class);
+public class PropertyUtil {
+    private static final MyLog log = MyLog.getLog(PropertyUtil.class);
     private static Properties props;
 
     static {
@@ -24,7 +24,7 @@ public class GeneratePropertyUtil {
         InputStream in = null;
         try {
             /*第一种，通过类加载器进行获取properties文件流*/
-            in = GeneratePropertyUtil.class.getClassLoader().getResourceAsStream("constant.properties");
+            in = PropertyUtil.class.getClassLoader().getResourceAsStream("constant.properties");
             /*第二种，通过类进行获取properties文件流*/
             //in = PropertyUtil.class.getResourceAsStream("/constant.properties");
             props.load(in);

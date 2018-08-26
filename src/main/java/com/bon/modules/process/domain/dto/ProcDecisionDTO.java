@@ -8,7 +8,7 @@ import com.bon.common.domain.dto.BaseDTO;
 import com.bon.modules.process.domain.entity.ProcDecision;
 
 /**
- * @Created：2018-08-24
+ * @Created：2018-08-25
  * @Author Albert
  * @Version: 1.0
  * @Description: ProcDecision参数类
@@ -21,11 +21,11 @@ public class ProcDecisionDTO extends BaseDTO<ProcDecision> implements Serializab
     @ApiModelProperty(value = "ID")
     private Long decisionId;
 
-    @ApiModelProperty(value = "关联customer表主键")
-    private Integer objectId;
+    @ApiModelProperty(value = "创建时间")
+    private Date gmtCreate;
 
-    @ApiModelProperty(value = "决策名称")
-    private String name;
+    @ApiModelProperty(value = "最后一次更新时间")
+    private Date gmtModified;
 
     @ApiModelProperty(value = "连线类型")
     private String type;
@@ -42,12 +42,6 @@ public class ProcDecisionDTO extends BaseDTO<ProcDecision> implements Serializab
     @ApiModelProperty(value = "下一节点，无下一节点为0，表示结束")
     private Integer nextNodeId;
 
-    @ApiModelProperty(value = "创建时间")
-    private Date gmtCreate;
-
-    @ApiModelProperty(value = "最后一次更新时间")
-    private Date gmtModified;
-
     public Long getDecisionId() {
         return decisionId;
     }
@@ -56,20 +50,20 @@ public class ProcDecisionDTO extends BaseDTO<ProcDecision> implements Serializab
         this.decisionId = decisionId;
     }
 
-    public Integer getObjectId() {
-        return objectId;
+    public Date getGmtCreate() {
+        return gmtCreate;
     }
 
-    public void setObjectId(Integer objectId) {
-        this.objectId = objectId;
+    public void setGmtCreate(Date gmtCreate) {
+        this.gmtCreate = gmtCreate;
     }
 
-    public String getName() {
-        return name;
+    public Date getGmtModified() {
+        return gmtModified;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setGmtModified(Date gmtModified) {
+        this.gmtModified = gmtModified;
     }
 
     public String getType() {
@@ -110,22 +104,6 @@ public class ProcDecisionDTO extends BaseDTO<ProcDecision> implements Serializab
 
     public void setNextNodeId(Integer nextNodeId) {
         this.nextNodeId = nextNodeId;
-    }
-
-    public Date getGmtCreate() {
-        return gmtCreate;
-    }
-
-    public void setGmtCreate(Date gmtCreate) {
-        this.gmtCreate = gmtCreate;
-    }
-
-    public Date getGmtModified() {
-        return gmtModified;
-    }
-
-    public void setGmtModified(Date gmtModified) {
-        this.gmtModified = gmtModified;
     }
 
 }

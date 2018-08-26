@@ -11,7 +11,7 @@ import javax.persistence.GeneratedValue;
 
 
 /**
- * @Created：2018-08-24
+ * @Created：2018-08-25
  * @Author Albert
  * @Version: 1.0
  * @Description: ProcDecision参数类
@@ -26,11 +26,13 @@ public class ProcDecision implements Serializable{
     @ApiModelProperty(value = "ID")
     private Long decisionId;
 
-    @ApiModelProperty(value = "关联customer表主键")
-    private Integer objectId;
+    @ApiModelProperty(value = "创建时间")
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    private Date gmtCreate;
 
-    @ApiModelProperty(value = "决策名称")
-    private String name;
+    @ApiModelProperty(value = "最后一次更新时间")
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    private Date gmtModified;
 
     @ApiModelProperty(value = "连线类型")
     private String type;
@@ -47,14 +49,6 @@ public class ProcDecision implements Serializable{
     @ApiModelProperty(value = "下一节点，无下一节点为0，表示结束")
     private Integer nextNodeId;
 
-    @ApiModelProperty(value = "创建时间")
-    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
-    private Date gmtCreate;
-
-    @ApiModelProperty(value = "最后一次更新时间")
-    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
-    private Date gmtModified;
-
     public Long getDecisionId() {
         return decisionId;
     }
@@ -63,20 +57,20 @@ public class ProcDecision implements Serializable{
         this.decisionId = decisionId;
     }
 
-    public Integer getObjectId() {
-        return objectId;
+    public Date getGmtCreate() {
+        return gmtCreate;
     }
 
-    public void setObjectId(Integer objectId) {
-        this.objectId = objectId;
+    public void setGmtCreate(Date gmtCreate) {
+        this.gmtCreate = gmtCreate;
     }
 
-    public String getName() {
-        return name;
+    public Date getGmtModified() {
+        return gmtModified;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setGmtModified(Date gmtModified) {
+        this.gmtModified = gmtModified;
     }
 
     public String getType() {
@@ -117,22 +111,6 @@ public class ProcDecision implements Serializable{
 
     public void setNextNodeId(Integer nextNodeId) {
         this.nextNodeId = nextNodeId;
-    }
-
-    public Date getGmtCreate() {
-        return gmtCreate;
-    }
-
-    public void setGmtCreate(Date gmtCreate) {
-        this.gmtCreate = gmtCreate;
-    }
-
-    public Date getGmtModified() {
-        return gmtModified;
-    }
-
-    public void setGmtModified(Date gmtModified) {
-        this.gmtModified = gmtModified;
     }
 
 }

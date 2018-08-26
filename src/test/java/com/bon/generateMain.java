@@ -20,6 +20,23 @@ import java.util.Map;
 public class generateMain {
 
     /**
+     * @Author: Bon
+     * @Description: 根据excel生成数据库语句
+     * @param
+     * @return: void
+     * @Date: 2018/8/19 12:57
+     */
+    @Test
+    public void generateViewSQL() throws Exception {
+        List<String> tableList;
+        tableList = new ArrayList<>();
+        tableList.add("proc_setting");
+        tableList.add("proc_decision");
+        String s = POIUtil.generateViewSql(new File(SysBaseService.class.getResource("/sql/generate.xls").getFile()).getAbsolutePath(),null);
+        System.out.println(s);
+    }
+
+    /**
      * 生成所有文件(需要生成多个表的文件时加入mapList中即可)
      */
     @Test
@@ -31,11 +48,11 @@ public class generateMain {
         map.put("tableName","proc_setting");
         map.put("modules","process");
         maps.add(map);
-//
-//        map = new HashMap<>();
-//        map.put("tableName","sys_menu");
-//        map.put("modules","process");
-//        maps.add(map);
+
+        map = new HashMap<>();
+        map.put("tableName","proc_decision");
+        map.put("modules","process");
+        maps.add(map);
 
         for(Map<String,String> map1 : maps) {
             GenerateCoreUtil.generateAll(map1.get("tableName"),map1.get("modules"));
@@ -49,10 +66,10 @@ public class generateMain {
         List<Map<String,String>> maps = new ArrayList<>();
         Map<String,String> map;
 
-//        map = new HashMap<>();
-//        map.put("tableName","sys_permission");
-//        map.put("modules","sys");
-//        maps.add(map);
+        map = new HashMap<>();
+        map.put("tableName","proc_setting");
+        map.put("modules","process");
+        maps.add(map);
 //
 //        map = new HashMap<>();
 //        map.put("tableName","sys_menu");
@@ -72,15 +89,15 @@ public class generateMain {
         List<Map<String,String>> maps = new ArrayList<>();
         Map<String,String> map;
 
-        map = new HashMap<>();
-        map.put("tableName","sys_permission");
-        map.put("modules","sys");
-        maps.add(map);
-
-        map = new HashMap<>();
-        map.put("tableName","sys_menu");
-        map.put("modules","sys");
-        maps.add(map);
+//        map = new HashMap<>();
+//        map.put("tableName","sys_permission");
+//        map.put("modules","sys");
+//        maps.add(map);
+//
+//        map = new HashMap<>();
+//        map.put("tableName","sys_menu");
+//        map.put("modules","sys");
+//        maps.add(map);
 
         for(Map<String,String> map1 : maps) {
             GenerateCoreUtil.createEntityClass(map1.get("tableName"),map1.get("modules"));
@@ -116,22 +133,7 @@ public class generateMain {
             GenerateCoreUtil.createServiceImplClass(map1.get("tableName"),map1.get("modules"));
         }
     }
-    /**
-     * @Author: Bon
-     * @Description: 根据excel生成数据库语句
-     * @param
-     * @return: void
-     * @Date: 2018/8/19 12:57
-     */
-    @Test
-    public void generateViewSQL() throws Exception {
-        List<String> tableList;
-        tableList = new ArrayList<>();
-        tableList.add("proc_setting");
-        tableList.add("proc_decision");
-        String s = POIUtil.generateViewSql(new File(SysBaseService.class.getResource("/sql/generate.xls").getFile()).getAbsolutePath(),null);
-        System.out.println(s);
-    }
+
 
 
     /**

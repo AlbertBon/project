@@ -5,7 +5,7 @@ import com.bon.modules.process.domain.entity.ProcDecision;
 import java.io.Serializable;
 
 /**
- * @Created：2018-08-24
+ * @Created：2018-08-25
  * @Author Albert
  * @Version: 1.0
  * @Description: ProcDecision列表参数类
