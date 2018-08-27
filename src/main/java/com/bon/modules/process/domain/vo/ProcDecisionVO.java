@@ -4,7 +4,7 @@ import java.util.*;
 import java.io.Serializable;
 
 /**
- * @Created：2018-08-25
+ * @Created：2018-08-27
  * @Author Albert
  * @Version: 1.0
  * @Description: ProcDecision视图类
@@ -18,6 +18,10 @@ public class ProcDecisionVO implements Serializable{
     private Date gmtCreate;
 
     private Date gmtModified;
+
+    private Integer formTypeId;
+
+    private String name;
 
     private String type;
 
@@ -51,6 +55,22 @@ public class ProcDecisionVO implements Serializable{
 
     public void setGmtModified(Date gmtModified) {
         this.gmtModified = gmtModified;
+    }
+
+    public Integer getFormTypeId() {
+        return formTypeId;
+    }
+
+    public void setFormTypeId(Integer formTypeId) {
+        this.formTypeId = formTypeId;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getType() {

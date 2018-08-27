@@ -107,7 +107,7 @@ public class generateMain {
         Map<String,String> map;
 
         map = new HashMap<>();
-        map.put("tableName","proc_setting");
+        map.put("tableName","form_type");
         map.put("modules","process");
         maps.add(map);
 //
@@ -152,15 +152,15 @@ public class generateMain {
         List<Map<String,String>> maps = new ArrayList<>();
         Map<String,String> map;
 
-        map = new HashMap<>();
-        map.put("tableName","proc_setting");
-        map.put("modules","process");
-        maps.add(map);
-//
 //        map = new HashMap<>();
-//        map.put("tableName","proc_decision");
+//        map.put("tableName","proc_setting");
 //        map.put("modules","process");
 //        maps.add(map);
+//
+        map = new HashMap<>();
+        map.put("tableName","proc_decision");
+        map.put("modules","process");
+        maps.add(map);
 
 //        map = new HashMap<>();
 //        map.put("tableName","process");

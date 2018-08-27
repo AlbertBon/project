@@ -11,7 +11,7 @@ import javax.persistence.GeneratedValue;
 
 
 /**
- * @Created：2018-08-25
+ * @Created：2018-08-27
  * @Author Albert
  * @Version: 1.0
  * @Description: ProcDecision参数类
@@ -33,6 +33,12 @@ public class ProcDecision implements Serializable{
     @ApiModelProperty(value = "最后一次更新时间")
     @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date gmtModified;
+
+    @ApiModelProperty(value = "")
+    private Integer formTypeId;
+
+    @ApiModelProperty(value = "决策名称")
+    private String name;
 
     @ApiModelProperty(value = "连线类型")
     private String type;
@@ -71,6 +77,22 @@ public class ProcDecision implements Serializable{
 
     public void setGmtModified(Date gmtModified) {
         this.gmtModified = gmtModified;
+    }
+
+    public Integer getFormTypeId() {
+        return formTypeId;
+    }
+
+    public void setFormTypeId(Integer formTypeId) {
+        this.formTypeId = formTypeId;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getType() {

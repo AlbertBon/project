@@ -60,6 +60,8 @@ public class ProcDecisionServiceImpl implements ProcDecisionService {
         procDecision.setDecisionId(null);
         procDecision.setGmtCreate(new Date());
         procDecision.setGmtModified(new Date());
+        procDecision.setNodeId(dto.getFrom());
+        procDecision.setNextNodeId(dto.getTo());
         procDecisionMapper.insertSelective(procDecision);
     }
     /**更新数据*/
