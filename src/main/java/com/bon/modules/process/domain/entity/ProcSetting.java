@@ -11,7 +11,7 @@ import javax.persistence.GeneratedValue;
 
 
 /**
- * @Created：2018-08-25
+ * @Created：2018-08-27
  * @Author Albert
  * @Version: 1.0
  * @Description: ProcSetting参数类
@@ -34,6 +34,9 @@ public class ProcSetting implements Serializable{
     @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date gmtModified;
 
+    @ApiModelProperty(value = "表单类型ID")
+    private Integer formTypeId;
+
     @ApiModelProperty(value = "主管部门")
     private Integer departmentId;
 
@@ -41,16 +44,16 @@ public class ProcSetting implements Serializable{
     private String nodeName;
 
     @ApiModelProperty(value = "左边距离")
-    private Integer left;
+    private Integer nodeLeft;
 
     @ApiModelProperty(value = "顶部距离")
-    private Integer top;
+    private Integer nodeTop;
 
     @ApiModelProperty(value = "宽度")
-    private Integer width;
+    private Integer nodeWidth;
 
     @ApiModelProperty(value = "高度")
-    private Integer height;
+    private Integer nodeHeight;
 
     @ApiModelProperty(value = "可处理职位IDS:可处理该流程的职位;关联position.position_id;dealer_pos和dealer必填一项")
     private String dealerPos;
@@ -115,6 +118,14 @@ public class ProcSetting implements Serializable{
         this.gmtModified = gmtModified;
     }
 
+    public Integer getFormTypeId() {
+        return formTypeId;
+    }
+
+    public void setFormTypeId(Integer formTypeId) {
+        this.formTypeId = formTypeId;
+    }
+
     public Integer getDepartmentId() {
         return departmentId;
     }
@@ -131,36 +142,36 @@ public class ProcSetting implements Serializable{
         this.nodeName = nodeName;
     }
 
-    public Integer getLeft() {
-        return left;
+    public Integer getNodeLeft() {
+        return nodeLeft;
     }
 
-    public void setLeft(Integer left) {
-        this.left = left;
+    public void setNodeLeft(Integer nodeLeft) {
+        this.nodeLeft = nodeLeft;
     }
 
-    public Integer getTop() {
-        return top;
+    public Integer getNodeTop() {
+        return nodeTop;
     }
 
-    public void setTop(Integer top) {
-        this.top = top;
+    public void setNodeTop(Integer nodeTop) {
+        this.nodeTop = nodeTop;
     }
 
-    public Integer getWidth() {
-        return width;
+    public Integer getNodeWidth() {
+        return nodeWidth;
     }
 
-    public void setWidth(Integer width) {
-        this.width = width;
+    public void setNodeWidth(Integer nodeWidth) {
+        this.nodeWidth = nodeWidth;
     }
 
-    public Integer getHeight() {
-        return height;
+    public Integer getNodeHeight() {
+        return nodeHeight;
     }
 
-    public void setHeight(Integer height) {
-        this.height = height;
+    public void setNodeHeight(Integer nodeHeight) {
+        this.nodeHeight = nodeHeight;
     }
 
     public String getDealerPos() {

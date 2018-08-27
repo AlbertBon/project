@@ -8,7 +8,7 @@ import com.bon.common.domain.dto.BaseDTO;
 import com.bon.modules.process.domain.entity.ProcSetting;
 
 /**
- * @Created：2018-08-25
+ * @Created：2018-08-27
  * @Author Albert
  * @Version: 1.0
  * @Description: ProcSetting参数类
@@ -27,11 +27,14 @@ public class ProcSettingDTO extends BaseDTO<ProcSetting> implements Serializable
     @ApiModelProperty(value = "最后一次更新时间")
     private Date gmtModified;
 
+    @ApiModelProperty(value = "表单类型ID")
+    private Integer formTypeId;
+
     @ApiModelProperty(value = "主管部门")
     private Integer departmentId;
 
     @ApiModelProperty(value = "节点名称")
-    private String nodeName;
+    private String name;
 
     @ApiModelProperty(value = "左边距离")
     private Integer left;
@@ -70,7 +73,7 @@ public class ProcSettingDTO extends BaseDTO<ProcSetting> implements Serializable
     private Byte singleReject;
 
     @ApiModelProperty(value = "节点类型：00：自动节点;01：人工节点;02：状态节点;04：决策节点;99：结束节点;98：开始节点")
-    private String nodeType;
+    private String type;
 
     @ApiModelProperty(value = "是否自动决策：0：非决策节点时的默认值;1：手动决策;2：自动决策")
     private Byte autoDesition;
@@ -108,6 +111,14 @@ public class ProcSettingDTO extends BaseDTO<ProcSetting> implements Serializable
         this.gmtModified = gmtModified;
     }
 
+    public Integer getFormTypeId() {
+        return formTypeId;
+    }
+
+    public void setFormTypeId(Integer formTypeId) {
+        this.formTypeId = formTypeId;
+    }
+
     public Integer getDepartmentId() {
         return departmentId;
     }
@@ -116,12 +127,12 @@ public class ProcSettingDTO extends BaseDTO<ProcSetting> implements Serializable
         this.departmentId = departmentId;
     }
 
-    public String getNodeName() {
-        return nodeName;
+    public String getName() {
+        return name;
     }
 
-    public void setNodeName(String nodeName) {
-        this.nodeName = nodeName;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public Integer getLeft() {
@@ -220,12 +231,12 @@ public class ProcSettingDTO extends BaseDTO<ProcSetting> implements Serializable
         this.singleReject = singleReject;
     }
 
-    public String getNodeType() {
-        return nodeType;
+    public String getType() {
+        return type;
     }
 
-    public void setNodeType(String nodeType) {
-        this.nodeType = nodeType;
+    public void setType(String type) {
+        this.type = type;
     }
 
     public Byte getAutoDesition() {
@@ -259,5 +270,4 @@ public class ProcSettingDTO extends BaseDTO<ProcSetting> implements Serializable
     public void setActionMethod(String actionMethod) {
         this.actionMethod = actionMethod;
     }
-
 }

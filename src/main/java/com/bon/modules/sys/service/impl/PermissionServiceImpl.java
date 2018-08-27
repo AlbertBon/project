@@ -258,6 +258,8 @@ public class PermissionServiceImpl implements PermissionService {
 
     @Override
     public void generateMenuToVue(String tableName, String modules) {
+        //转为驼峰形式
+        tableName = StringUtils.underline2Camel(tableName,true);
         String parentPermissionFlag = "menu:" + modules + ":main";
         BaseDTO baseDTO = new BaseDTO();
         baseDTO.andFind(new SysPermission(), "permissionFlag", parentPermissionFlag);

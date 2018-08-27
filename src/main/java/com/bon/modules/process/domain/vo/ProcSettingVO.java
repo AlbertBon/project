@@ -4,7 +4,7 @@ import java.util.*;
 import java.io.Serializable;
 
 /**
- * @Created：2018-08-25
+ * @Created：2018-08-27
  * @Author Albert
  * @Version: 1.0
  * @Description: ProcSetting视图类
@@ -19,17 +19,19 @@ public class ProcSettingVO implements Serializable{
 
     private Date gmtModified;
 
+    private Integer formTypeId;
+
     private Integer departmentId;
 
     private String nodeName;
 
-    private Integer left;
+    private Integer nodeLeft;
 
-    private Integer top;
+    private Integer nodeTop;
 
-    private Integer width;
+    private Integer nodeWidth;
 
-    private Integer height;
+    private Integer nodeHeight;
 
     private String dealerPos;
 
@@ -81,6 +83,14 @@ public class ProcSettingVO implements Serializable{
         this.gmtModified = gmtModified;
     }
 
+    public Integer getFormTypeId() {
+        return formTypeId;
+    }
+
+    public void setFormTypeId(Integer formTypeId) {
+        this.formTypeId = formTypeId;
+    }
+
     public Integer getDepartmentId() {
         return departmentId;
     }
@@ -97,36 +107,36 @@ public class ProcSettingVO implements Serializable{
         this.nodeName = nodeName;
     }
 
-    public Integer getLeft() {
-        return left;
+    public Integer getNodeLeft() {
+        return nodeLeft;
     }
 
-    public void setLeft(Integer left) {
-        this.left = left;
+    public void setNodeLeft(Integer nodeLeft) {
+        this.nodeLeft = nodeLeft;
     }
 
-    public Integer getTop() {
-        return top;
+    public Integer getNodeTop() {
+        return nodeTop;
     }
 
-    public void setTop(Integer top) {
-        this.top = top;
+    public void setNodeTop(Integer nodeTop) {
+        this.nodeTop = nodeTop;
     }
 
-    public Integer getWidth() {
-        return width;
+    public Integer getNodeWidth() {
+        return nodeWidth;
     }
 
-    public void setWidth(Integer width) {
-        this.width = width;
+    public void setNodeWidth(Integer nodeWidth) {
+        this.nodeWidth = nodeWidth;
     }
 
-    public Integer getHeight() {
-        return height;
+    public Integer getNodeHeight() {
+        return nodeHeight;
     }
 
-    public void setHeight(Integer height) {
-        this.height = height;
+    public void setNodeHeight(Integer nodeHeight) {
+        this.nodeHeight = nodeHeight;
     }
 
     public String getDealerPos() {

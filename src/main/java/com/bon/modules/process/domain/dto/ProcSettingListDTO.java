@@ -5,7 +5,7 @@ import com.bon.modules.process.domain.entity.ProcSetting;
 import java.io.Serializable;
 
 /**
- * @Created：2018-08-25
+ * @Created：2018-08-27
  * @Author Albert
  * @Version: 1.0
  * @Description: ProcSetting列表参数类

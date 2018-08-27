@@ -54,13 +54,20 @@ public class ProcSettingServiceImpl implements ProcSettingService {
     }
     /**保存数据*/
     @Override
-    public void saveProcSetting(ProcSettingDTO dto) {
+    public Long saveProcSetting(ProcSettingDTO dto) {
         ProcSetting procSetting = new ProcSetting();
         BeanUtil.copyPropertys(dto, procSetting);
         procSetting.setNodeId(null);
         procSetting.setGmtCreate(new Date());
         procSetting.setGmtModified(new Date());
+        procSetting.setNodeName(dto.getName());
+        procSetting.setNodeWidth(dto.getWidth());
+        procSetting.setNodeHeight(dto.getHeight());
+        procSetting.setNodeLeft(dto.getLeft());
+        procSetting.setNodeTop(dto.getTop());
+        procSetting.setNodeType(dto.getType());
         procSettingMapper.insertSelective(procSetting);
+        return procSetting.getNodeId();
     }
     /**更新数据*/
     @Override

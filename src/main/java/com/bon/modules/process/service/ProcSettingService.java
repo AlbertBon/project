@@ -21,7 +21,7 @@ public interface ProcSettingService {
     /**查询列表*/
      public PageVO listProcSetting(ProcSettingListDTO dto);
     /**保存数据*/
-     public void saveProcSetting(ProcSettingDTO dto);
+     public Long saveProcSetting(ProcSettingDTO dto);
     /**更新数据*/
      public void updateProcSetting(ProcSettingDTO dto);
     /**删除数据*/

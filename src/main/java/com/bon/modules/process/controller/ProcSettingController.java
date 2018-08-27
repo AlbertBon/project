@@ -48,8 +48,8 @@ public class ProcSettingController {
     @RequiresPermissions({"url:procSetting:saveProcSetting"})
     @PostMapping(value = "/save",produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     public ResultBody saveProcSetting(@RequestBody ProcSettingDTO dto){
-        procSettingService.saveProcSetting(dto);
-        return new ResultBody();
+        Long key = procSettingService.saveProcSetting(dto);
+        return new ResultBody((Object) key);
     }
 
     @ApiOperation(value = "修改ProcSetting")
