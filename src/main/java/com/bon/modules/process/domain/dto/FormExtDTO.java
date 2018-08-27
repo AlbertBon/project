@@ -1,0 +1,131 @@
+package com.bon.modules.process.domain.dto;
+
+import java.util.*;
+import java.io.Serializable;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+import com.bon.common.domain.dto.BaseDTO;
+import com.bon.modules.process.domain.entity.FormExt;
+
+/**
+ * @Created：2018-08-27
+ * @Author Albert
+ * @Version: 1.0
+ * @Description: FormExt参数类
+ * @Email: 502285815@qq.com
+*/
+@ApiModel(value ="FormExtDTO")
+public class FormExtDTO extends BaseDTO<FormExt> implements Serializable{
+    private static final long serialVersionUID = 1L;
+
+    @ApiModelProperty(value = "ID")
+    private Long formExtId;
+
+    @ApiModelProperty(value = "创建时间")
+    private Date gmtCreate;
+
+    @ApiModelProperty(value = "最后一次更新时间")
+    private Date gmtModified;
+
+    @ApiModelProperty(value = "表单实例ID:关联form.form_id")
+    private Integer formId;
+
+    @ApiModelProperty(value = "扩展表单项ID：关联form_ext_setting.option_id")
+    private Integer optionId;
+
+    @ApiModelProperty(value = "表单项组别")
+    private Integer optGroup;
+
+    @ApiModelProperty(value = "表单类型:00：短文本;01：长文本;02：下拉选项;03：多选项;04：单选项")
+    private String optType;
+
+    @ApiModelProperty(value = "表单项名称")
+    private String label;
+
+    @ApiModelProperty(value = "表单项唯一标示")
+    private String optName;
+
+    @ApiModelProperty(value = "表单值")
+    private String optValue;
+
+    public Long getFormExtId() {
+        return formExtId;
+    }
+
+    public void setFormExtId(Long formExtId) {
+        this.formExtId = formExtId;
+    }
+
+    public Date getGmtCreate() {
+        return gmtCreate;
+    }
+
+    public void setGmtCreate(Date gmtCreate) {
+        this.gmtCreate = gmtCreate;
+    }
+
+    public Date getGmtModified() {
+        return gmtModified;
+    }
+
+    public void setGmtModified(Date gmtModified) {
+        this.gmtModified = gmtModified;
+    }
+
+    public Integer getFormId() {
+        return formId;
+    }
+
+    public void setFormId(Integer formId) {
+        this.formId = formId;
+    }
+
+    public Integer getOptionId() {
+        return optionId;
+    }
+
+    public void setOptionId(Integer optionId) {
+        this.optionId = optionId;
+    }
+
+    public Integer getOptGroup() {
+        return optGroup;
+    }
+
+    public void setOptGroup(Integer optGroup) {
+        this.optGroup = optGroup;
+    }
+
+    public String getOptType() {
+        return optType;
+    }
+
+    public void setOptType(String optType) {
+        this.optType = optType;
+    }
+
+    public String getLabel() {
+        return label;
+    }
+
+    public void setLabel(String label) {
+        this.label = label;
+    }
+
+    public String getOptName() {
+        return optName;
+    }
+
+    public void setOptName(String optName) {
+        this.optName = optName;
+    }
+
+    public String getOptValue() {
+        return optValue;
+    }
+
+    public void setOptValue(String optValue) {
+        this.optValue = optValue;
+    }
+
+}

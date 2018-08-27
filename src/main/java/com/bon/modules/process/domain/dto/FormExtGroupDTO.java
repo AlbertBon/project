@@ -1,0 +1,120 @@
+package com.bon.modules.process.domain.dto;
+
+import java.util.*;
+import java.io.Serializable;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+import com.bon.common.domain.dto.BaseDTO;
+import com.bon.modules.process.domain.entity.FormExtGroup;
+
+/**
+ * @Created：2018-08-27
+ * @Author Albert
+ * @Version: 1.0
+ * @Description: FormExtGroup参数类
+ * @Email: 502285815@qq.com
+*/
+@ApiModel(value ="FormExtGroupDTO")
+public class FormExtGroupDTO extends BaseDTO<FormExtGroup> implements Serializable{
+    private static final long serialVersionUID = 1L;
+
+    @ApiModelProperty(value = "ID")
+    private Long extGroupId;
+
+    @ApiModelProperty(value = "创建时间")
+    private Date gmtCreate;
+
+    @ApiModelProperty(value = "最后一次更新时间")
+    private Date gmtModified;
+
+    @ApiModelProperty(value = "表单类型ID")
+    private Integer formTypeId;
+
+    @ApiModelProperty(value = "表单TabID")
+    private Integer tabId;
+
+    @ApiModelProperty(value = "表单项组别：;与proc_setting.node_id关联;默认为0;为0时表示流程开始就必须填写;不为0时表示走到相应流程时填写")
+    private Integer nodeId;
+
+    @ApiModelProperty(value = "唯一标识码")
+    private String name;
+
+    @ApiModelProperty(value = "流程表单类型")
+    private String label;
+
+    @ApiModelProperty(value = "排序序号")
+    private Integer serialNumber;
+
+    public Long getExtGroupId() {
+        return extGroupId;
+    }
+
+    public void setExtGroupId(Long extGroupId) {
+        this.extGroupId = extGroupId;
+    }
+
+    public Date getGmtCreate() {
+        return gmtCreate;
+    }
+
+    public void setGmtCreate(Date gmtCreate) {
+        this.gmtCreate = gmtCreate;
+    }
+
+    public Date getGmtModified() {
+        return gmtModified;
+    }
+
+    public void setGmtModified(Date gmtModified) {
+        this.gmtModified = gmtModified;
+    }
+
+    public Integer getFormTypeId() {
+        return formTypeId;
+    }
+
+    public void setFormTypeId(Integer formTypeId) {
+        this.formTypeId = formTypeId;
+    }
+
+    public Integer getTabId() {
+        return tabId;
+    }
+
+    public void setTabId(Integer tabId) {
+        this.tabId = tabId;
+    }
+
+    public Integer getNodeId() {
+        return nodeId;
+    }
+
+    public void setNodeId(Integer nodeId) {
+        this.nodeId = nodeId;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getLabel() {
+        return label;
+    }
+
+    public void setLabel(String label) {
+        this.label = label;
+    }
+
+    public Integer getSerialNumber() {
+        return serialNumber;
+    }
+
+    public void setSerialNumber(Integer serialNumber) {
+        this.serialNumber = serialNumber;
+    }
+
+}
