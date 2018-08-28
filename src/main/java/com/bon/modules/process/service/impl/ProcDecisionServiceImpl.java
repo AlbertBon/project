@@ -60,8 +60,6 @@ public class ProcDecisionServiceImpl implements ProcDecisionService {
         procDecision.setDecisionId(null);
         procDecision.setGmtCreate(new Date());
         procDecision.setGmtModified(new Date());
-        procDecision.setNodeId(dto.getFrom());
-        procDecision.setNextNodeId(dto.getTo());
         procDecisionMapper.insertSelective(procDecision);
     }
     /**更新数据*/
@@ -80,6 +78,16 @@ public class ProcDecisionServiceImpl implements ProcDecisionService {
     public void deleteProcDecision(Long id) {
         procDecisionMapper.deleteByPrimaryKey(id);
     }
-    
+
+    @Override
+    public void updateBatchProcDecision(List<ProcDecisionDTO> dtoList) {
+        for(ProcDecisionDTO dto : dtoList){
+            ProcDecision procDecision = new ProcDecision();
+            BeanUtil.copyPropertys(dto, procDecision);
+            procDecision.setGmtModified(new Date());
+            procDecisionMapper.updateByPrimaryKeySelective(procDecision);
+        }
+    }
+
 
 }

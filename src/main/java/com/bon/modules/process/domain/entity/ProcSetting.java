@@ -11,7 +11,7 @@ import javax.persistence.GeneratedValue;
 
 
 /**
- * @Created：2018-08-27
+ * @Created：2018-08-28
  * @Author Albert
  * @Version: 1.0
  * @Description: ProcSetting参数类
@@ -35,10 +35,10 @@ public class ProcSetting implements Serializable{
     private Date gmtModified;
 
     @ApiModelProperty(value = "表单类型ID")
-    private Integer formTypeId;
+    private Long formTypeId;
 
     @ApiModelProperty(value = "主管部门")
-    private Integer departmentId;
+    private Long departmentId;
 
     @ApiModelProperty(value = "节点名称")
     private String nodeName;
@@ -118,19 +118,19 @@ public class ProcSetting implements Serializable{
         this.gmtModified = gmtModified;
     }
 
-    public Integer getFormTypeId() {
+    public Long getFormTypeId() {
         return formTypeId;
     }
 
-    public void setFormTypeId(Integer formTypeId) {
+    public void setFormTypeId(Long formTypeId) {
         this.formTypeId = formTypeId;
     }
 
-    public Integer getDepartmentId() {
+    public Long getDepartmentId() {
         return departmentId;
     }
 
-    public void setDepartmentId(Integer departmentId) {
+    public void setDepartmentId(Long departmentId) {
         this.departmentId = departmentId;
     }
 

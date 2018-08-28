@@ -8,7 +8,7 @@ import com.bon.common.domain.dto.BaseDTO;
 import com.bon.modules.process.domain.entity.FormExt;
 
 /**
- * @Created：2018-08-27
+ * @Created：2018-08-28
  * @Author Albert
  * @Version: 1.0
  * @Description: FormExt参数类
@@ -28,13 +28,13 @@ public class FormExtDTO extends BaseDTO<FormExt> implements Serializable{
     private Date gmtModified;
 
     @ApiModelProperty(value = "表单实例ID:关联form.form_id")
-    private Integer formId;
+    private Long formId;
 
     @ApiModelProperty(value = "扩展表单项ID：关联form_ext_setting.option_id")
-    private Integer optionId;
+    private Long optionId;
 
     @ApiModelProperty(value = "表单项组别")
-    private Integer optGroup;
+    private Long optGroup;
 
     @ApiModelProperty(value = "表单类型:00：短文本;01：长文本;02：下拉选项;03：多选项;04：单选项")
     private String optType;
@@ -72,27 +72,27 @@ public class FormExtDTO extends BaseDTO<FormExt> implements Serializable{
         this.gmtModified = gmtModified;
     }
 
-    public Integer getFormId() {
+    public Long getFormId() {
         return formId;
     }
 
-    public void setFormId(Integer formId) {
+    public void setFormId(Long formId) {
         this.formId = formId;
     }
 
-    public Integer getOptionId() {
+    public Long getOptionId() {
         return optionId;
     }
 
-    public void setOptionId(Integer optionId) {
+    public void setOptionId(Long optionId) {
         this.optionId = optionId;
     }
 
-    public Integer getOptGroup() {
+    public Long getOptGroup() {
         return optGroup;
     }
 
-    public void setOptGroup(Integer optGroup) {
+    public void setOptGroup(Long optGroup) {
         this.optGroup = optGroup;
     }
 

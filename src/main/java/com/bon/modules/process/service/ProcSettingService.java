@@ -26,6 +26,7 @@ public interface ProcSettingService {
      public void updateProcSetting(ProcSettingDTO dto);
     /**删除数据*/
      public void deleteProcSetting(Long id);
-    
+    /**批量更新数据*/
+    public void updateBatchProcSetting(List<ProcSettingDTO> dtoList);
 
 }

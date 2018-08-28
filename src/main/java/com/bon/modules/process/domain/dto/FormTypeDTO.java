@@ -8,7 +8,7 @@ import com.bon.common.domain.dto.BaseDTO;
 import com.bon.modules.process.domain.entity.FormType;
 
 /**
- * @Created：2018-08-27
+ * @Created：2018-08-28
  * @Author Albert
  * @Version: 1.0
  * @Description: FormType参数类

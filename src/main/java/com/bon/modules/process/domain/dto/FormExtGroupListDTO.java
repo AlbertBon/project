@@ -5,7 +5,7 @@ import com.bon.modules.process.domain.entity.FormExtGroup;
 import java.io.Serializable;
 
 /**
- * @Created：2018-08-27
+ * @Created：2018-08-28
  * @Author Albert
  * @Version: 1.0
  * @Description: FormExtGroup列表参数类

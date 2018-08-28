@@ -4,7 +4,7 @@ import java.util.*;
 import java.io.Serializable;
 
 /**
- * @Created：2018-08-27
+ * @Created：2018-08-28
  * @Author Albert
  * @Version: 1.0
  * @Description: FormExt视图类
@@ -19,11 +19,11 @@ public class FormExtVO implements Serializable{
 
     private Date gmtModified;
 
-    private Integer formId;
+    private Long formId;
 
-    private Integer optionId;
+    private Long optionId;
 
-    private Integer optGroup;
+    private Long optGroup;
 
     private String optType;
 
@@ -57,27 +57,27 @@ public class FormExtVO implements Serializable{
         this.gmtModified = gmtModified;
     }
 
-    public Integer getFormId() {
+    public Long getFormId() {
         return formId;
     }
 
-    public void setFormId(Integer formId) {
+    public void setFormId(Long formId) {
         this.formId = formId;
     }
 
-    public Integer getOptionId() {
+    public Long getOptionId() {
         return optionId;
     }
 
-    public void setOptionId(Integer optionId) {
+    public void setOptionId(Long optionId) {
         this.optionId = optionId;
     }
 
-    public Integer getOptGroup() {
+    public Long getOptGroup() {
         return optGroup;
     }
 
-    public void setOptGroup(Integer optGroup) {
+    public void setOptGroup(Long optGroup) {
         this.optGroup = optGroup;
     }
 

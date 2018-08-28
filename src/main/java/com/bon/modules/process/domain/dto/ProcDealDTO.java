@@ -8,7 +8,7 @@ import com.bon.common.domain.dto.BaseDTO;
 import com.bon.modules.process.domain.entity.ProcDeal;
 
 /**
- * @Created：2018-08-27
+ * @Created：2018-08-28
  * @Author Albert
  * @Version: 1.0
  * @Description: ProcDeal参数类
@@ -28,10 +28,10 @@ public class ProcDealDTO extends BaseDTO<ProcDeal> implements Serializable{
     private Date gmtModified;
 
     @ApiModelProperty(value = "流程记录节点ID:与process.process_node_id相关联")
-    private Integer processNodeId;
+    private Long processNodeId;
 
     @ApiModelProperty(value = "处理员工ID:关联staff.staff_id ")
-    private Integer dealer;
+    private Long dealer;
 
     @ApiModelProperty(value = "处理结果:01：通过;02：拒绝;03：驳回")
     private String status;
@@ -66,19 +66,19 @@ public class ProcDealDTO extends BaseDTO<ProcDeal> implements Serializable{
         this.gmtModified = gmtModified;
     }
 
-    public Integer getProcessNodeId() {
+    public Long getProcessNodeId() {
         return processNodeId;
     }
 
-    public void setProcessNodeId(Integer processNodeId) {
+    public void setProcessNodeId(Long processNodeId) {
         this.processNodeId = processNodeId;
     }
 
-    public Integer getDealer() {
+    public Long getDealer() {
         return dealer;
     }
 
-    public void setDealer(Integer dealer) {
+    public void setDealer(Long dealer) {
         this.dealer = dealer;
     }
 

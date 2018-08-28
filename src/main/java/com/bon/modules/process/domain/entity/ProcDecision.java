@@ -11,7 +11,7 @@ import javax.persistence.GeneratedValue;
 
 
 /**
- * @Created：2018-08-27
+ * @Created：2018-08-28
  * @Author Albert
  * @Version: 1.0
  * @Description: ProcDecision参数类
@@ -34,7 +34,7 @@ public class ProcDecision implements Serializable{
     @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date gmtModified;
 
-    @ApiModelProperty(value = "")
+    @ApiModelProperty(value = "表单类型ID")
     private Integer formTypeId;
 
     @ApiModelProperty(value = "决策名称")
@@ -44,7 +44,7 @@ public class ProcDecision implements Serializable{
     private String type;
 
     @ApiModelProperty(value = "节点ID：与proc_setting.node_id关联")
-    private Integer nodeId;
+    private Long nodeId;
 
     @ApiModelProperty(value = "处理结果：00：未处理;01：通过;02：拒绝;03：驳回")
     private String status;
@@ -53,7 +53,7 @@ public class ProcDecision implements Serializable{
     private String decisionInfo;
 
     @ApiModelProperty(value = "下一节点，无下一节点为0，表示结束")
-    private Integer nextNodeId;
+    private Long nextNodeId;
 
     public Long getDecisionId() {
         return decisionId;
@@ -103,11 +103,11 @@ public class ProcDecision implements Serializable{
         this.type = type;
     }
 
-    public Integer getNodeId() {
+    public Long getNodeId() {
         return nodeId;
     }
 
-    public void setNodeId(Integer nodeId) {
+    public void setNodeId(Long nodeId) {
         this.nodeId = nodeId;
     }
 
@@ -127,11 +127,11 @@ public class ProcDecision implements Serializable{
         this.decisionInfo = decisionInfo;
     }
 
-    public Integer getNextNodeId() {
+    public Long getNextNodeId() {
         return nextNodeId;
     }
 
-    public void setNextNodeId(Integer nextNodeId) {
+    public void setNextNodeId(Long nextNodeId) {
         this.nextNodeId = nextNodeId;
     }
 

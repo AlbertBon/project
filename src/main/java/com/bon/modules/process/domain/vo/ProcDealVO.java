@@ -4,7 +4,7 @@ import java.util.*;
 import java.io.Serializable;
 
 /**
- * @Created：2018-08-27
+ * @Created：2018-08-28
  * @Author Albert
  * @Version: 1.0
  * @Description: ProcDeal视图类
@@ -19,9 +19,9 @@ public class ProcDealVO implements Serializable{
 
     private Date gmtModified;
 
-    private Integer processNodeId;
+    private Long processNodeId;
 
-    private Integer dealer;
+    private Long dealer;
 
     private String status;
 
@@ -53,19 +53,19 @@ public class ProcDealVO implements Serializable{
         this.gmtModified = gmtModified;
     }
 
-    public Integer getProcessNodeId() {
+    public Long getProcessNodeId() {
         return processNodeId;
     }
 
-    public void setProcessNodeId(Integer processNodeId) {
+    public void setProcessNodeId(Long processNodeId) {
         this.processNodeId = processNodeId;
     }
 
-    public Integer getDealer() {
+    public Long getDealer() {
         return dealer;
     }
 
-    public void setDealer(Integer dealer) {
+    public void setDealer(Long dealer) {
         this.dealer = dealer;
     }
 

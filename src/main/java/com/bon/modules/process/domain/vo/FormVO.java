@@ -4,7 +4,7 @@ import java.util.*;
 import java.io.Serializable;
 
 /**
- * @Created：2018-08-27
+ * @Created：2018-08-28
  * @Author Albert
  * @Version: 1.0
  * @Description: Form视图类
@@ -19,15 +19,15 @@ public class FormVO implements Serializable{
 
     private Date gmtModified;
 
-    private Integer formTypeId;
+    private Long formTypeId;
 
-    private Integer curNodeId;
+    private Long curNodeId;
 
     private String name;
 
     private Date createTime;
 
-    private Integer creatorId;
+    private Long creatorId;
 
     public Long getFormId() {
         return formId;
@@ -53,19 +53,19 @@ public class FormVO implements Serializable{
         this.gmtModified = gmtModified;
     }
 
-    public Integer getFormTypeId() {
+    public Long getFormTypeId() {
         return formTypeId;
     }
 
-    public void setFormTypeId(Integer formTypeId) {
+    public void setFormTypeId(Long formTypeId) {
         this.formTypeId = formTypeId;
     }
 
-    public Integer getCurNodeId() {
+    public Long getCurNodeId() {
         return curNodeId;
     }
 
-    public void setCurNodeId(Integer curNodeId) {
+    public void setCurNodeId(Long curNodeId) {
         this.curNodeId = curNodeId;
     }
 
@@ -85,11 +85,11 @@ public class FormVO implements Serializable{
         this.createTime = createTime;
     }
 
-    public Integer getCreatorId() {
+    public Long getCreatorId() {
         return creatorId;
     }
 
-    public void setCreatorId(Integer creatorId) {
+    public void setCreatorId(Long creatorId) {
         this.creatorId = creatorId;
     }
 

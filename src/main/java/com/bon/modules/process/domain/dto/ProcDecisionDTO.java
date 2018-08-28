@@ -8,7 +8,7 @@ import com.bon.common.domain.dto.BaseDTO;
 import com.bon.modules.process.domain.entity.ProcDecision;
 
 /**
- * @Created：2018-08-27
+ * @Created：2018-08-28
  * @Author Albert
  * @Version: 1.0
  * @Description: ProcDecision参数类
@@ -27,17 +27,17 @@ public class ProcDecisionDTO extends BaseDTO<ProcDecision> implements Serializab
     @ApiModelProperty(value = "最后一次更新时间")
     private Date gmtModified;
 
+    @ApiModelProperty(value = "表单类型ID")
+    private Integer formTypeId;
+
     @ApiModelProperty(value = "决策名称")
     private String name;
 
     @ApiModelProperty(value = "连线类型")
     private String type;
 
-    @ApiModelProperty(value = "")
-    private Integer formTypeId;
-
     @ApiModelProperty(value = "节点ID：与proc_setting.node_id关联")
-    private Integer from;
+    private Long nodeId;
 
     @ApiModelProperty(value = "处理结果：00：未处理;01：通过;02：拒绝;03：驳回")
     private String status;
@@ -46,15 +46,7 @@ public class ProcDecisionDTO extends BaseDTO<ProcDecision> implements Serializab
     private String decisionInfo;
 
     @ApiModelProperty(value = "下一节点，无下一节点为0，表示结束")
-    private Integer to;
-
-    public Integer getFormTypeId() {
-        return formTypeId;
-    }
-
-    public void setFormTypeId(Integer formTypeId) {
-        this.formTypeId = formTypeId;
-    }
+    private Long nextNodeId;
 
     public Long getDecisionId() {
         return decisionId;
@@ -80,6 +72,14 @@ public class ProcDecisionDTO extends BaseDTO<ProcDecision> implements Serializab
         this.gmtModified = gmtModified;
     }
 
+    public Integer getFormTypeId() {
+        return formTypeId;
+    }
+
+    public void setFormTypeId(Integer formTypeId) {
+        this.formTypeId = formTypeId;
+    }
+
     public String getName() {
         return name;
     }
@@ -96,12 +96,12 @@ public class ProcDecisionDTO extends BaseDTO<ProcDecision> implements Serializab
         this.type = type;
     }
 
-    public Integer getFrom() {
-        return from;
+    public Long getNodeId() {
+        return nodeId;
     }
 
-    public void setFrom(Integer from) {
-        this.from = from;
+    public void setNodeId(Long nodeId) {
+        this.nodeId = nodeId;
     }
 
     public String getStatus() {
@@ -120,11 +120,12 @@ public class ProcDecisionDTO extends BaseDTO<ProcDecision> implements Serializab
         this.decisionInfo = decisionInfo;
     }
 
-    public Integer getTo() {
-        return to;
+    public Long getNextNodeId() {
+        return nextNodeId;
     }
 
-    public void setTo(Integer to) {
-        this.to = to;
+    public void setNextNodeId(Long nextNodeId) {
+        this.nextNodeId = nextNodeId;
     }
+
 }

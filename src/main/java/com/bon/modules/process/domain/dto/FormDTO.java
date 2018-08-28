@@ -8,7 +8,7 @@ import com.bon.common.domain.dto.BaseDTO;
 import com.bon.modules.process.domain.entity.Form;
 
 /**
- * @Created：2018-08-27
+ * @Created：2018-08-28
  * @Author Albert
  * @Version: 1.0
  * @Description: Form参数类
@@ -28,10 +28,10 @@ public class FormDTO extends BaseDTO<Form> implements Serializable{
     private Date gmtModified;
 
     @ApiModelProperty(value = "表单类型ID：与form_type.form_type_id关联")
-    private Integer formTypeId;
+    private Long formTypeId;
 
     @ApiModelProperty(value = "当前所处节点ID")
-    private Integer curNodeId;
+    private Long curNodeId;
 
     @ApiModelProperty(value = "实例名称")
     private String name;
@@ -40,7 +40,7 @@ public class FormDTO extends BaseDTO<Form> implements Serializable{
     private Date createTime;
 
     @ApiModelProperty(value = "建立人")
-    private Integer creatorId;
+    private Long creatorId;
 
     public Long getFormId() {
         return formId;
@@ -66,19 +66,19 @@ public class FormDTO extends BaseDTO<Form> implements Serializable{
         this.gmtModified = gmtModified;
     }
 
-    public Integer getFormTypeId() {
+    public Long getFormTypeId() {
         return formTypeId;
     }
 
-    public void setFormTypeId(Integer formTypeId) {
+    public void setFormTypeId(Long formTypeId) {
         this.formTypeId = formTypeId;
     }
 
-    public Integer getCurNodeId() {
+    public Long getCurNodeId() {
         return curNodeId;
     }
 
-    public void setCurNodeId(Integer curNodeId) {
+    public void setCurNodeId(Long curNodeId) {
         this.curNodeId = curNodeId;
     }
 
@@ -98,11 +98,11 @@ public class FormDTO extends BaseDTO<Form> implements Serializable{
         this.createTime = createTime;
     }
 
-    public Integer getCreatorId() {
+    public Long getCreatorId() {
         return creatorId;
     }
 
-    public void setCreatorId(Integer creatorId) {
+    public void setCreatorId(Long creatorId) {
         this.creatorId = creatorId;
     }
 

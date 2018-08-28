@@ -5,6 +5,7 @@ import java.util.*;
 import com.bon.common.domain.vo.PageVO;
 import com.bon.common.exception.BusinessException;
 import com.bon.common.util.BeanUtil;
+import com.bon.modules.sys.domain.dto.PermissionUpdateDTO;
 import com.github.pagehelper.PageHelper;
 import com.bon.modules.process.domain.dto.*;
 import com.bon.modules.process.domain.vo.*;
@@ -60,12 +61,6 @@ public class ProcSettingServiceImpl implements ProcSettingService {
         procSetting.setNodeId(null);
         procSetting.setGmtCreate(new Date());
         procSetting.setGmtModified(new Date());
-        procSetting.setNodeName(dto.getName());
-        procSetting.setNodeWidth(dto.getWidth());
-        procSetting.setNodeHeight(dto.getHeight());
-        procSetting.setNodeLeft(dto.getLeft());
-        procSetting.setNodeTop(dto.getTop());
-        procSetting.setNodeType(dto.getType());
         procSettingMapper.insertSelective(procSetting);
         return procSetting.getNodeId();
     }
@@ -85,6 +80,16 @@ public class ProcSettingServiceImpl implements ProcSettingService {
     public void deleteProcSetting(Long id) {
         procSettingMapper.deleteByPrimaryKey(id);
     }
-    
+
+    @Override
+    public void updateBatchProcSetting(List<ProcSettingDTO> dtoList) {
+        for(ProcSettingDTO dto : dtoList){
+            ProcSetting procSetting = new ProcSetting();
+            BeanUtil.copyPropertys(dto, procSetting);
+            procSetting.setGmtModified(new Date());
+            procSettingMapper.updateByPrimaryKeySelective(procSetting);
+        }
+    }
+
 
 }

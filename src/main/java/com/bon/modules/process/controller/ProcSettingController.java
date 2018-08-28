@@ -12,6 +12,8 @@ import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 
 /**
  * @Created：2018-08-25
@@ -65,6 +67,14 @@ public class ProcSettingController {
     @GetMapping(value = "/delete")
     public ResultBody deleteProcSetting(@RequestParam Long key){
         procSettingService.deleteProcSetting(key);
+        return new ResultBody();
+    }
+
+    @ApiOperation(value = "批量修改ProcSetting")
+    @RequiresPermissions({"url:procSetting:updateBatchProcSetting"})
+    @PostMapping(value = "/updateBatch",produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    public ResultBody updateBatchProcSetting(@RequestBody List<ProcSettingDTO> dtoList){
+        procSettingService.updateBatchProcSetting(dtoList);
         return new ResultBody();
     }
 

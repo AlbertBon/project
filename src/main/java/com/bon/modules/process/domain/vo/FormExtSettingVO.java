@@ -4,7 +4,7 @@ import java.util.*;
 import java.io.Serializable;
 
 /**
- * @Created：2018-08-27
+ * @Created：2018-08-28
  * @Author Albert
  * @Version: 1.0
  * @Description: FormExtSetting视图类
@@ -21,11 +21,11 @@ public class FormExtSettingVO implements Serializable{
 
     private Integer formTypeId;
 
-    private Integer nodeId;
+    private Long nodeId;
 
     private String itemType;
 
-    private Integer extGroupId;
+    private Long extGroupId;
 
     private String label;
 
@@ -75,11 +75,11 @@ public class FormExtSettingVO implements Serializable{
         this.formTypeId = formTypeId;
     }
 
-    public Integer getNodeId() {
+    public Long getNodeId() {
         return nodeId;
     }
 
-    public void setNodeId(Integer nodeId) {
+    public void setNodeId(Long nodeId) {
         this.nodeId = nodeId;
     }
 
@@ -91,11 +91,11 @@ public class FormExtSettingVO implements Serializable{
         this.itemType = itemType;
     }
 
-    public Integer getExtGroupId() {
+    public Long getExtGroupId() {
         return extGroupId;
     }
 
-    public void setExtGroupId(Integer extGroupId) {
+    public void setExtGroupId(Long extGroupId) {
         this.extGroupId = extGroupId;
     }
 

@@ -26,6 +26,7 @@ public interface ProcDecisionService {
      public void updateProcDecision(ProcDecisionDTO dto);
     /**删除数据*/
      public void deleteProcDecision(Long id);
-    
+    /**批量更新数据*/
+    public void updateBatchProcDecision(List<ProcDecisionDTO> dtoList);
 
 }

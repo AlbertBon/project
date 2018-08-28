@@ -152,55 +152,55 @@ public class generateMain {
         List<Map<String,String>> maps = new ArrayList<>();
         Map<String,String> map;
 
-//        map = new HashMap<>();
-//        map.put("tableName","proc_setting");
-//        map.put("modules","process");
-//        maps.add(map);
+        map = new HashMap<>();
+        map.put("tableName","proc_setting");
+        map.put("modules","process");
+        maps.add(map);
 //
         map = new HashMap<>();
         map.put("tableName","proc_decision");
         map.put("modules","process");
         maps.add(map);
 
-//        map = new HashMap<>();
-//        map.put("tableName","process");
-//        map.put("modules","process");
-//        maps.add(map);
-//
-//        map = new HashMap<>();
-//        map.put("tableName","proc_deal");
-//        map.put("modules","process");
-//        maps.add(map);
-//
-//        map = new HashMap<>();
-//        map.put("tableName","form");
-//        map.put("modules","process");
-//        maps.add(map);
-//
-//        map = new HashMap<>();
-//        map.put("tableName","form_type");
-//        map.put("modules","process");
-//        maps.add(map);
-//
-//        map = new HashMap<>();
-//        map.put("tableName","form_ext_tab");
-//        map.put("modules","process");
-//        maps.add(map);
-//
-//        map = new HashMap<>();
-//        map.put("tableName","form_ext_group");
-//        map.put("modules","process");
-//        maps.add(map);
-//
-//        map = new HashMap<>();
-//        map.put("tableName","form_ext_setting");
-//        map.put("modules","process");
-//        maps.add(map);
-//
-//        map = new HashMap<>();
-//        map.put("tableName","form_ext");
-//        map.put("modules","process");
-//        maps.add(map);
+        map = new HashMap<>();
+        map.put("tableName","process");
+        map.put("modules","process");
+        maps.add(map);
+
+        map = new HashMap<>();
+        map.put("tableName","proc_deal");
+        map.put("modules","process");
+        maps.add(map);
+
+        map = new HashMap<>();
+        map.put("tableName","form");
+        map.put("modules","process");
+        maps.add(map);
+
+        map = new HashMap<>();
+        map.put("tableName","form_type");
+        map.put("modules","process");
+        maps.add(map);
+
+        map = new HashMap<>();
+        map.put("tableName","form_ext_tab");
+        map.put("modules","process");
+        maps.add(map);
+
+        map = new HashMap<>();
+        map.put("tableName","form_ext_group");
+        map.put("modules","process");
+        maps.add(map);
+
+        map = new HashMap<>();
+        map.put("tableName","form_ext_setting");
+        map.put("modules","process");
+        maps.add(map);
+
+        map = new HashMap<>();
+        map.put("tableName","form_ext");
+        map.put("modules","process");
+        maps.add(map);
 
         for(Map<String,String> map1 : maps) {
             GenerateCoreUtil.createEntityClass(map1.get("tableName"),map1.get("modules"));

@@ -4,7 +4,7 @@ import java.util.*;
 import java.io.Serializable;
 
 /**
- * @Created：2018-08-27
+ * @Created：2018-08-28
  * @Author Albert
  * @Version: 1.0
  * @Description: FormExtTab视图类
@@ -19,9 +19,9 @@ public class FormExtTabVO implements Serializable{
 
     private Date gmtModified;
 
-    private Integer formTypeId;
+    private Long formTypeId;
 
-    private Integer nodeId;
+    private Long nodeId;
 
     private String name;
 
@@ -53,19 +53,19 @@ public class FormExtTabVO implements Serializable{
         this.gmtModified = gmtModified;
     }
 
-    public Integer getFormTypeId() {
+    public Long getFormTypeId() {
         return formTypeId;
     }
 
-    public void setFormTypeId(Integer formTypeId) {
+    public void setFormTypeId(Long formTypeId) {
         this.formTypeId = formTypeId;
     }
 
-    public Integer getNodeId() {
+    public Long getNodeId() {
         return nodeId;
     }
 
-    public void setNodeId(Integer nodeId) {
+    public void setNodeId(Long nodeId) {
         this.nodeId = nodeId;
     }
 

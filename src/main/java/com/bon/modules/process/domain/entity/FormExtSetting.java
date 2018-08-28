@@ -11,7 +11,7 @@ import javax.persistence.GeneratedValue;
 
 
 /**
- * @Created：2018-08-27
+ * @Created：2018-08-28
  * @Author Albert
  * @Version: 1.0
  * @Description: FormExtSetting参数类
@@ -38,13 +38,13 @@ public class FormExtSetting implements Serializable{
     private Integer formTypeId;
 
     @ApiModelProperty(value = "表单项组别：与proc_setting.node_id关联;默认为0;为0时表示流程开始就必须填写;不为0时表示走到相应流程时填写")
-    private Integer nodeId;
+    private Long nodeId;
 
     @ApiModelProperty(value = "表单类型：origin：原生；extend：扩展")
     private String itemType;
 
     @ApiModelProperty(value = "表单组类别：与form_ext_group.ext_group_id关联")
-    private Integer extGroupId;
+    private Long extGroupId;
 
     @ApiModelProperty(value = "表单项名称")
     private String label;
@@ -102,11 +102,11 @@ public class FormExtSetting implements Serializable{
         this.formTypeId = formTypeId;
     }
 
-    public Integer getNodeId() {
+    public Long getNodeId() {
         return nodeId;
     }
 
-    public void setNodeId(Integer nodeId) {
+    public void setNodeId(Long nodeId) {
         this.nodeId = nodeId;
     }
 
@@ -118,11 +118,11 @@ public class FormExtSetting implements Serializable{
         this.itemType = itemType;
     }
 
-    public Integer getExtGroupId() {
+    public Long getExtGroupId() {
         return extGroupId;
     }
 
-    public void setExtGroupId(Integer extGroupId) {
+    public void setExtGroupId(Long extGroupId) {
         this.extGroupId = extGroupId;
     }
 

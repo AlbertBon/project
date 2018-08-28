@@ -8,7 +8,7 @@ import com.bon.common.domain.dto.BaseDTO;
 import com.bon.modules.process.domain.entity.ProcSetting;
 
 /**
- * @Created：2018-08-27
+ * @Created：2018-08-28
  * @Author Albert
  * @Version: 1.0
  * @Description: ProcSetting参数类
@@ -28,25 +28,25 @@ public class ProcSettingDTO extends BaseDTO<ProcSetting> implements Serializable
     private Date gmtModified;
 
     @ApiModelProperty(value = "表单类型ID")
-    private Integer formTypeId;
+    private Long formTypeId;
 
     @ApiModelProperty(value = "主管部门")
-    private Integer departmentId;
+    private Long departmentId;
 
     @ApiModelProperty(value = "节点名称")
-    private String name;
+    private String nodeName;
 
     @ApiModelProperty(value = "左边距离")
-    private Integer left;
+    private Integer nodeLeft;
 
     @ApiModelProperty(value = "顶部距离")
-    private Integer top;
+    private Integer nodeTop;
 
     @ApiModelProperty(value = "宽度")
-    private Integer width;
+    private Integer nodeWidth;
 
     @ApiModelProperty(value = "高度")
-    private Integer height;
+    private Integer nodeHeight;
 
     @ApiModelProperty(value = "可处理职位IDS:可处理该流程的职位;关联position.position_id;dealer_pos和dealer必填一项")
     private String dealerPos;
@@ -73,7 +73,7 @@ public class ProcSettingDTO extends BaseDTO<ProcSetting> implements Serializable
     private Byte singleReject;
 
     @ApiModelProperty(value = "节点类型：00：自动节点;01：人工节点;02：状态节点;04：决策节点;99：结束节点;98：开始节点")
-    private String type;
+    private String nodeType;
 
     @ApiModelProperty(value = "是否自动决策：0：非决策节点时的默认值;1：手动决策;2：自动决策")
     private Byte autoDesition;
@@ -111,60 +111,60 @@ public class ProcSettingDTO extends BaseDTO<ProcSetting> implements Serializable
         this.gmtModified = gmtModified;
     }
 
-    public Integer getFormTypeId() {
+    public Long getFormTypeId() {
         return formTypeId;
     }
 
-    public void setFormTypeId(Integer formTypeId) {
+    public void setFormTypeId(Long formTypeId) {
         this.formTypeId = formTypeId;
     }
 
-    public Integer getDepartmentId() {
+    public Long getDepartmentId() {
         return departmentId;
     }
 
-    public void setDepartmentId(Integer departmentId) {
+    public void setDepartmentId(Long departmentId) {
         this.departmentId = departmentId;
     }
 
-    public String getName() {
-        return name;
+    public String getNodeName() {
+        return nodeName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setNodeName(String nodeName) {
+        this.nodeName = nodeName;
     }
 
-    public Integer getLeft() {
-        return left;
+    public Integer getNodeLeft() {
+        return nodeLeft;
     }
 
-    public void setLeft(Integer left) {
-        this.left = left;
+    public void setNodeLeft(Integer nodeLeft) {
+        this.nodeLeft = nodeLeft;
     }
 
-    public Integer getTop() {
-        return top;
+    public Integer getNodeTop() {
+        return nodeTop;
     }
 
-    public void setTop(Integer top) {
-        this.top = top;
+    public void setNodeTop(Integer nodeTop) {
+        this.nodeTop = nodeTop;
     }
 
-    public Integer getWidth() {
-        return width;
+    public Integer getNodeWidth() {
+        return nodeWidth;
     }
 
-    public void setWidth(Integer width) {
-        this.width = width;
+    public void setNodeWidth(Integer nodeWidth) {
+        this.nodeWidth = nodeWidth;
     }
 
-    public Integer getHeight() {
-        return height;
+    public Integer getNodeHeight() {
+        return nodeHeight;
     }
 
-    public void setHeight(Integer height) {
-        this.height = height;
+    public void setNodeHeight(Integer nodeHeight) {
+        this.nodeHeight = nodeHeight;
     }
 
     public String getDealerPos() {
@@ -231,12 +231,12 @@ public class ProcSettingDTO extends BaseDTO<ProcSetting> implements Serializable
         this.singleReject = singleReject;
     }
 
-    public String getType() {
-        return type;
+    public String getNodeType() {
+        return nodeType;
     }
 
-    public void setType(String type) {
-        this.type = type;
+    public void setNodeType(String nodeType) {
+        this.nodeType = nodeType;
     }
 
     public Byte getAutoDesition() {
@@ -270,4 +270,5 @@ public class ProcSettingDTO extends BaseDTO<ProcSetting> implements Serializable
     public void setActionMethod(String actionMethod) {
         this.actionMethod = actionMethod;
     }
+
 }

@@ -5,7 +5,7 @@ import com.bon.modules.process.domain.entity.FormExtSetting;
 import java.io.Serializable;
 
 /**
- * @Created：2018-08-27
+ * @Created：2018-08-28
  * @Author Albert
  * @Version: 1.0
  * @Description: FormExtSetting列表参数类

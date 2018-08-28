@@ -4,7 +4,7 @@ import java.util.*;
 import java.io.Serializable;
 
 /**
- * @Created：2018-08-27
+ * @Created：2018-08-28
  * @Author Albert
  * @Version: 1.0
  * @Description: ProcSetting视图类
@@ -19,9 +19,9 @@ public class ProcSettingVO implements Serializable{
 
     private Date gmtModified;
 
-    private Integer formTypeId;
+    private Long formTypeId;
 
-    private Integer departmentId;
+    private Long departmentId;
 
     private String nodeName;
 
@@ -83,19 +83,19 @@ public class ProcSettingVO implements Serializable{
         this.gmtModified = gmtModified;
     }
 
-    public Integer getFormTypeId() {
+    public Long getFormTypeId() {
         return formTypeId;
     }
 
-    public void setFormTypeId(Integer formTypeId) {
+    public void setFormTypeId(Long formTypeId) {
         this.formTypeId = formTypeId;
     }
 
-    public Integer getDepartmentId() {
+    public Long getDepartmentId() {
         return departmentId;
     }
 
-    public void setDepartmentId(Integer departmentId) {
+    public void setDepartmentId(Long departmentId) {
         this.departmentId = departmentId;
     }
 

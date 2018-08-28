@@ -4,7 +4,7 @@ import java.util.*;
 import java.io.Serializable;
 
 /**
- * @Created：2018-08-27
+ * @Created：2018-08-28
  * @Author Albert
  * @Version: 1.0
  * @Description: ProcDecision视图类
@@ -25,13 +25,13 @@ public class ProcDecisionVO implements Serializable{
 
     private String type;
 
-    private Integer nodeId;
+    private Long nodeId;
 
     private String status;
 
     private String decisionInfo;
 
-    private Integer nextNodeId;
+    private Long nextNodeId;
 
     public Long getDecisionId() {
         return decisionId;
@@ -81,11 +81,11 @@ public class ProcDecisionVO implements Serializable{
         this.type = type;
     }
 
-    public Integer getNodeId() {
+    public Long getNodeId() {
         return nodeId;
     }
 
-    public void setNodeId(Integer nodeId) {
+    public void setNodeId(Long nodeId) {
         this.nodeId = nodeId;
     }
 
@@ -105,11 +105,11 @@ public class ProcDecisionVO implements Serializable{
         this.decisionInfo = decisionInfo;
     }
 
-    public Integer getNextNodeId() {
+    public Long getNextNodeId() {
         return nextNodeId;
     }
 
-    public void setNextNodeId(Integer nextNodeId) {
+    public void setNextNodeId(Long nextNodeId) {
         this.nextNodeId = nextNodeId;
     }
 

@@ -11,7 +11,7 @@ import javax.persistence.GeneratedValue;
 
 
 /**
- * @Created：2018-08-27
+ * @Created：2018-08-28
  * @Author Albert
  * @Version: 1.0
  * @Description: FormExtTab参数类
@@ -35,10 +35,10 @@ public class FormExtTab implements Serializable{
     private Date gmtModified;
 
     @ApiModelProperty(value = "表单类型ID")
-    private Integer formTypeId;
+    private Long formTypeId;
 
     @ApiModelProperty(value = "表单项组别：;与proc_setting.node_id关联;默认为0;为0时表示流程开始就必须填写;不为0时表示走到相应流程时填写")
-    private Integer nodeId;
+    private Long nodeId;
 
     @ApiModelProperty(value = "唯一标识码")
     private String name;
@@ -73,19 +73,19 @@ public class FormExtTab implements Serializable{
         this.gmtModified = gmtModified;
     }
 
-    public Integer getFormTypeId() {
+    public Long getFormTypeId() {
         return formTypeId;
     }
 
-    public void setFormTypeId(Integer formTypeId) {
+    public void setFormTypeId(Long formTypeId) {
         this.formTypeId = formTypeId;
     }
 
-    public Integer getNodeId() {
+    public Long getNodeId() {
         return nodeId;
     }
 
-    public void setNodeId(Integer nodeId) {
+    public void setNodeId(Long nodeId) {
         this.nodeId = nodeId;
     }
 
