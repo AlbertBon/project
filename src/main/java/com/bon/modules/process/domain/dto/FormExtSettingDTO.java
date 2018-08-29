@@ -8,7 +8,7 @@ import com.bon.common.domain.dto.BaseDTO;
 import com.bon.modules.process.domain.entity.FormExtSetting;
 
 /**
- * @Created：2018-08-28
+ * @Created：2018-08-29
  * @Author Albert
  * @Version: 1.0
  * @Description: FormExtSetting参数类

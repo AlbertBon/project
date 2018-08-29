@@ -9,7 +9,7 @@ import com.bon.modules.process.domain.vo.*;
 
 
 /**
- * @Created：2018-08-27
+ * @Created：2018-08-29
  * @Author Albert
  * @Version: 1.0
  * @Description: FormExtTab服务接口类
@@ -21,7 +21,7 @@ public interface FormExtTabService {
     /**查询列表*/
      public PageVO listFormExtTab(FormExtTabListDTO dto);
     /**保存数据*/
-     public void saveFormExtTab(FormExtTabDTO dto);
+     public Long saveFormExtTab(FormExtTabDTO dto);
     /**更新数据*/
      public void updateFormExtTab(FormExtTabDTO dto);
     /**删除数据*/

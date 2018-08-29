@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.*;
 
 
 /**
- * @Created：2018-08-27
+ * @Created：2018-08-29
  * @Author Albert
  * @Version: 1.0
  * @Description: FormType控制层
@@ -48,8 +48,8 @@ public class FormTypeController {
     @RequiresPermissions({"url:formType:saveFormType"})
     @PostMapping(value = "/save",produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     public ResultBody saveFormType(@RequestBody FormTypeDTO dto){
-        formTypeService.saveFormType(dto);
-        return new ResultBody();
+        Long key = formTypeService.saveFormType(dto);
+        return new ResultBody((Object) key);
     }
 
     @ApiOperation(value = "修改FormType")

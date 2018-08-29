@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.*;
 
 
 /**
- * @Created：2018-08-27
+ * @Created：2018-08-29
  * @Author Albert
  * @Version: 1.0
  * @Description: Form控制层
@@ -48,8 +48,8 @@ public class FormController {
     @RequiresPermissions({"url:form:saveForm"})
     @PostMapping(value = "/save",produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     public ResultBody saveForm(@RequestBody FormDTO dto){
-        formService.saveForm(dto);
-        return new ResultBody();
+        Long key = formService.saveForm(dto);
+        return new ResultBody((Object) key);
     }
 
     @ApiOperation(value = "修改Form")

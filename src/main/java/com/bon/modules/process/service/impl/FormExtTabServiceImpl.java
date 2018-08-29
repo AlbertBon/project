@@ -17,7 +17,7 @@ import org.springframework.stereotype.Service;
 
 
 /**
- * @Created：2018-08-27
+ * @Created：2018-08-29
  * @Author Albert
  * @Version: 1.0
  * @Description: FormExtTab服务实现类
@@ -54,22 +54,19 @@ public class FormExtTabServiceImpl implements FormExtTabService {
     }
     /**保存数据*/
     @Override
-    public void saveFormExtTab(FormExtTabDTO dto) {
+    public Long saveFormExtTab(FormExtTabDTO dto) {
         FormExtTab formExtTab = new FormExtTab();
         BeanUtil.copyPropertys(dto, formExtTab);
         formExtTab.setTabId(null);
         formExtTab.setGmtCreate(new Date());
         formExtTab.setGmtModified(new Date());
         formExtTabMapper.insertSelective(formExtTab);
+        return formExtTab.getTabId();
     }
     /**更新数据*/
     @Override
     public void updateFormExtTab(FormExtTabDTO dto) {
-        FormExtTab formExtTab = formExtTabMapper.selectByPrimaryKey(dto.getTabId());
-        if (formExtTab == null) {
-            throw new BusinessException("获取信息失败");
-        }
-        BeanUtil.copyPropertys(dto, formExtTab);
+        FormExtTab formExtTab = new FormExtTab();        BeanUtil.copyPropertys(dto, formExtTab);
         formExtTab.setGmtModified(new Date());
         formExtTabMapper.updateByPrimaryKeySelective(formExtTab);
     }

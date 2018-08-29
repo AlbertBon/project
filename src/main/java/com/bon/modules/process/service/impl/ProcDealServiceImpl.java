@@ -17,7 +17,7 @@ import org.springframework.stereotype.Service;
 
 
 /**
- * @Created：2018-08-27
+ * @Created：2018-08-29
  * @Author Albert
  * @Version: 1.0
  * @Description: ProcDeal服务实现类
@@ -54,22 +54,19 @@ public class ProcDealServiceImpl implements ProcDealService {
     }
     /**保存数据*/
     @Override
-    public void saveProcDeal(ProcDealDTO dto) {
+    public Long saveProcDeal(ProcDealDTO dto) {
         ProcDeal procDeal = new ProcDeal();
         BeanUtil.copyPropertys(dto, procDeal);
         procDeal.setProcDealId(null);
         procDeal.setGmtCreate(new Date());
         procDeal.setGmtModified(new Date());
         procDealMapper.insertSelective(procDeal);
+        return procDeal.getProcDealId();
     }
     /**更新数据*/
     @Override
     public void updateProcDeal(ProcDealDTO dto) {
-        ProcDeal procDeal = procDealMapper.selectByPrimaryKey(dto.getProcDealId());
-        if (procDeal == null) {
-            throw new BusinessException("获取信息失败");
-        }
-        BeanUtil.copyPropertys(dto, procDeal);
+        ProcDeal procDeal = new ProcDeal();        BeanUtil.copyPropertys(dto, procDeal);
         procDeal.setGmtModified(new Date());
         procDealMapper.updateByPrimaryKeySelective(procDeal);
     }

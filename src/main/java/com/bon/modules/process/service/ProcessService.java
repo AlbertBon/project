@@ -9,7 +9,7 @@ import com.bon.modules.process.domain.vo.*;
 
 
 /**
- * @Created：2018-08-27
+ * @Created：2018-08-29
  * @Author Albert
  * @Version: 1.0
  * @Description: Process服务接口类
@@ -21,7 +21,7 @@ public interface ProcessService {
     /**查询列表*/
      public PageVO listProcess(ProcessListDTO dto);
     /**保存数据*/
-     public void saveProcess(ProcessDTO dto);
+     public Long saveProcess(ProcessDTO dto);
     /**更新数据*/
      public void updateProcess(ProcessDTO dto);
     /**删除数据*/

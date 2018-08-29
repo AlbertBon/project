@@ -17,7 +17,7 @@ import org.springframework.stereotype.Service;
 
 
 /**
- * @Created：2018-08-27
+ * @Created：2018-08-29
  * @Author Albert
  * @Version: 1.0
  * @Description: FormType服务实现类
@@ -54,22 +54,19 @@ public class FormTypeServiceImpl implements FormTypeService {
     }
     /**保存数据*/
     @Override
-    public void saveFormType(FormTypeDTO dto) {
+    public Long saveFormType(FormTypeDTO dto) {
         FormType formType = new FormType();
         BeanUtil.copyPropertys(dto, formType);
         formType.setFormTypeId(null);
         formType.setGmtCreate(new Date());
         formType.setGmtModified(new Date());
         formTypeMapper.insertSelective(formType);
+        return formType.getFormTypeId();
     }
     /**更新数据*/
     @Override
     public void updateFormType(FormTypeDTO dto) {
-        FormType formType = formTypeMapper.selectByPrimaryKey(dto.getFormTypeId());
-        if (formType == null) {
-            throw new BusinessException("获取信息失败");
-        }
-        BeanUtil.copyPropertys(dto, formType);
+        FormType formType = new FormType();        BeanUtil.copyPropertys(dto, formType);
         formType.setGmtModified(new Date());
         formTypeMapper.updateByPrimaryKeySelective(formType);
     }

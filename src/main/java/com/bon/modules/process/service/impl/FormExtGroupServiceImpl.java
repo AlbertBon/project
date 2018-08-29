@@ -17,7 +17,7 @@ import org.springframework.stereotype.Service;
 
 
 /**
- * @Created：2018-08-27
+ * @Created：2018-08-29
  * @Author Albert
  * @Version: 1.0
  * @Description: FormExtGroup服务实现类
@@ -54,22 +54,19 @@ public class FormExtGroupServiceImpl implements FormExtGroupService {
     }
     /**保存数据*/
     @Override
-    public void saveFormExtGroup(FormExtGroupDTO dto) {
+    public Long saveFormExtGroup(FormExtGroupDTO dto) {
         FormExtGroup formExtGroup = new FormExtGroup();
         BeanUtil.copyPropertys(dto, formExtGroup);
         formExtGroup.setExtGroupId(null);
         formExtGroup.setGmtCreate(new Date());
         formExtGroup.setGmtModified(new Date());
         formExtGroupMapper.insertSelective(formExtGroup);
+        return formExtGroup.getExtGroupId();
     }
     /**更新数据*/
     @Override
     public void updateFormExtGroup(FormExtGroupDTO dto) {
-        FormExtGroup formExtGroup = formExtGroupMapper.selectByPrimaryKey(dto.getExtGroupId());
-        if (formExtGroup == null) {
-            throw new BusinessException("获取信息失败");
-        }
-        BeanUtil.copyPropertys(dto, formExtGroup);
+        FormExtGroup formExtGroup = new FormExtGroup();        BeanUtil.copyPropertys(dto, formExtGroup);
         formExtGroup.setGmtModified(new Date());
         formExtGroupMapper.updateByPrimaryKeySelective(formExtGroup);
     }

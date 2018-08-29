@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.*;
 
 
 /**
- * @Created：2018-08-27
+ * @Created：2018-08-29
  * @Author Albert
  * @Version: 1.0
  * @Description: FormExtSetting控制层
@@ -48,8 +48,8 @@ public class FormExtSettingController {
     @RequiresPermissions({"url:formExtSetting:saveFormExtSetting"})
     @PostMapping(value = "/save",produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     public ResultBody saveFormExtSetting(@RequestBody FormExtSettingDTO dto){
-        formExtSettingService.saveFormExtSetting(dto);
-        return new ResultBody();
+        Long key = formExtSettingService.saveFormExtSetting(dto);
+        return new ResultBody((Object) key);
     }
 
     @ApiOperation(value = "修改FormExtSetting")

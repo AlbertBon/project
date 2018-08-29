@@ -9,7 +9,7 @@ import com.bon.modules.process.domain.vo.*;
 
 
 /**
- * @Created：2018-08-27
+ * @Created：2018-08-29
  * @Author Albert
  * @Version: 1.0
  * @Description: FormExtSetting服务接口类
@@ -21,7 +21,7 @@ public interface FormExtSettingService {
     /**查询列表*/
      public PageVO listFormExtSetting(FormExtSettingListDTO dto);
     /**保存数据*/
-     public void saveFormExtSetting(FormExtSettingDTO dto);
+     public Long saveFormExtSetting(FormExtSettingDTO dto);
     /**更新数据*/
      public void updateFormExtSetting(FormExtSettingDTO dto);
     /**删除数据*/

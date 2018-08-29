@@ -17,7 +17,7 @@ import org.springframework.stereotype.Service;
 
 
 /**
- * @Created：2018-08-27
+ * @Created：2018-08-29
  * @Author Albert
  * @Version: 1.0
  * @Description: FormExtSetting服务实现类
@@ -54,22 +54,19 @@ public class FormExtSettingServiceImpl implements FormExtSettingService {
     }
     /**保存数据*/
     @Override
-    public void saveFormExtSetting(FormExtSettingDTO dto) {
+    public Long saveFormExtSetting(FormExtSettingDTO dto) {
         FormExtSetting formExtSetting = new FormExtSetting();
         BeanUtil.copyPropertys(dto, formExtSetting);
         formExtSetting.setOptionId(null);
         formExtSetting.setGmtCreate(new Date());
         formExtSetting.setGmtModified(new Date());
         formExtSettingMapper.insertSelective(formExtSetting);
+        return formExtSetting.getOptionId();
     }
     /**更新数据*/
     @Override
     public void updateFormExtSetting(FormExtSettingDTO dto) {
-        FormExtSetting formExtSetting = formExtSettingMapper.selectByPrimaryKey(dto.getOptionId());
-        if (formExtSetting == null) {
-            throw new BusinessException("获取信息失败");
-        }
-        BeanUtil.copyPropertys(dto, formExtSetting);
+        FormExtSetting formExtSetting = new FormExtSetting();        BeanUtil.copyPropertys(dto, formExtSetting);
         formExtSetting.setGmtModified(new Date());
         formExtSettingMapper.updateByPrimaryKeySelective(formExtSetting);
     }

@@ -18,7 +18,7 @@ import org.springframework.stereotype.Service;
 
 
 /**
- * @Created：2018-08-27
+ * @Created：2018-08-29
  * @Author Albert
  * @Version: 1.0
  * @Description: Process服务实现类
@@ -55,22 +55,19 @@ public class ProcessServiceImpl implements ProcessService {
     }
     /**保存数据*/
     @Override
-    public void saveProcess(ProcessDTO dto) {
+    public Long saveProcess(ProcessDTO dto) {
         Process process = new Process();
         BeanUtil.copyPropertys(dto, process);
         process.setProcessId(null);
         process.setGmtCreate(new Date());
         process.setGmtModified(new Date());
         processMapper.insertSelective(process);
+        return process.getProcessId();
     }
     /**更新数据*/
     @Override
     public void updateProcess(ProcessDTO dto) {
-        Process process = processMapper.selectByPrimaryKey(dto.getProcessId());
-        if (process == null) {
-            throw new BusinessException("获取信息失败");
-        }
-        BeanUtil.copyPropertys(dto, process);
+        Process process = new Process();        BeanUtil.copyPropertys(dto, process);
         process.setGmtModified(new Date());
         processMapper.updateByPrimaryKeySelective(process);
     }

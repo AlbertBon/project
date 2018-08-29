@@ -17,7 +17,7 @@ import org.springframework.stereotype.Service;
 
 
 /**
- * @Created：2018-08-27
+ * @Created：2018-08-29
  * @Author Albert
  * @Version: 1.0
  * @Description: Form服务实现类
@@ -54,22 +54,19 @@ public class FormServiceImpl implements FormService {
     }
     /**保存数据*/
     @Override
-    public void saveForm(FormDTO dto) {
+    public Long saveForm(FormDTO dto) {
         Form form = new Form();
         BeanUtil.copyPropertys(dto, form);
         form.setFormId(null);
         form.setGmtCreate(new Date());
         form.setGmtModified(new Date());
         formMapper.insertSelective(form);
+        return form.getFormId();
     }
     /**更新数据*/
     @Override
     public void updateForm(FormDTO dto) {
-        Form form = formMapper.selectByPrimaryKey(dto.getFormId());
-        if (form == null) {
-            throw new BusinessException("获取信息失败");
-        }
-        BeanUtil.copyPropertys(dto, form);
+        Form form = new Form();        BeanUtil.copyPropertys(dto, form);
         form.setGmtModified(new Date());
         formMapper.updateByPrimaryKeySelective(form);
     }
