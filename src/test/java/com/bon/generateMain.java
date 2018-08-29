@@ -31,7 +31,7 @@ public class generateMain {
         List<String> tableList;
         tableList = new ArrayList<>();
 //        tableList.add("proc_setting");
-        tableList.add("proc_decision");
+        tableList.add("apply");
         String s = POIUtil.generateViewSql(new File(SysBaseService.class.getResource("/sql/generate.xls").getFile()).getAbsolutePath(),tableList);
         System.out.println(s);
     }
@@ -54,44 +54,49 @@ public class generateMain {
 //        map.put("modules","process");
 //        maps.add(map);
 
-        map = new HashMap<>();
-        map.put("tableName","process");
-        map.put("modules","process");
-        maps.add(map);
+//        map = new HashMap<>();
+//        map.put("tableName","process");
+//        map.put("modules","process");
+//        maps.add(map);
+//
+//        map = new HashMap<>();
+//        map.put("tableName","proc_deal");
+//        map.put("modules","process");
+//        maps.add(map);
+//
+//        map = new HashMap<>();
+//        map.put("tableName","form");
+//        map.put("modules","process");
+//        maps.add(map);
+//
+//        map = new HashMap<>();
+//        map.put("tableName","form_type");
+//        map.put("modules","process");
+//        maps.add(map);
+//
+//        map = new HashMap<>();
+//        map.put("tableName","form_ext_tab");
+//        map.put("modules","process");
+//        maps.add(map);
+//
+//        map = new HashMap<>();
+//        map.put("tableName","form_ext_group");
+//        map.put("modules","process");
+//        maps.add(map);
+//
+//        map = new HashMap<>();
+//        map.put("tableName","form_ext_setting");
+//        map.put("modules","process");
+//        maps.add(map);
+//
+//        map = new HashMap<>();
+//        map.put("tableName","form_ext");
+//        map.put("modules","process");
+//        maps.add(map);
 
         map = new HashMap<>();
-        map.put("tableName","proc_deal");
-        map.put("modules","process");
-        maps.add(map);
-
-        map = new HashMap<>();
-        map.put("tableName","form");
-        map.put("modules","process");
-        maps.add(map);
-
-        map = new HashMap<>();
-        map.put("tableName","form_type");
-        map.put("modules","process");
-        maps.add(map);
-
-        map = new HashMap<>();
-        map.put("tableName","form_ext_tab");
-        map.put("modules","process");
-        maps.add(map);
-
-        map = new HashMap<>();
-        map.put("tableName","form_ext_group");
-        map.put("modules","process");
-        maps.add(map);
-
-        map = new HashMap<>();
-        map.put("tableName","form_ext_setting");
-        map.put("modules","process");
-        maps.add(map);
-
-        map = new HashMap<>();
-        map.put("tableName","form_ext");
-        map.put("modules","process");
+        map.put("tableName","apply");
+        map.put("modules","apply");
         maps.add(map);
 
         for(Map<String,String> map1 : maps) {
@@ -106,15 +111,15 @@ public class generateMain {
         List<Map<String,String>> maps = new ArrayList<>();
         Map<String,String> map;
 
-        map = new HashMap<>();
-        map.put("tableName","form_type");
-        map.put("modules","process");
-        maps.add(map);
-//
 //        map = new HashMap<>();
-//        map.put("tableName","sys_menu");
-//        map.put("modules","sys");
+//        map.put("tableName","form_type");
+//        map.put("modules","process");
 //        maps.add(map);
+//
+        map = new HashMap<>();
+        map.put("tableName","apply");
+        map.put("modules","apply");
+        maps.add(map);
 
         for(Map<String,String> map1 : maps) {
             GenerateCoreUtil.generateVUE(map1.get("tableName"),map1.get("modules"));
