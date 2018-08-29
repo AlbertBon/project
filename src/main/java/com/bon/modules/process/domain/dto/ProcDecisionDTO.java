@@ -8,7 +8,7 @@ import com.bon.common.domain.dto.BaseDTO;
 import com.bon.modules.process.domain.entity.ProcDecision;
 
 /**
- * @Created：2018-08-28
+ * @Created：2018-08-29
  * @Author Albert
  * @Version: 1.0
  * @Description: ProcDecision参数类
@@ -47,6 +47,9 @@ public class ProcDecisionDTO extends BaseDTO<ProcDecision> implements Serializab
 
     @ApiModelProperty(value = "下一节点，无下一节点为0，表示结束")
     private Long nextNodeId;
+
+    @ApiModelProperty(value = "当type=”lr”时,为中段的相对于工作区的X坐标值,当type=”tb”时,为中段的相对于工作区的Y坐标值.")
+    private String position;
 
     public Long getDecisionId() {
         return decisionId;
@@ -126,6 +129,14 @@ public class ProcDecisionDTO extends BaseDTO<ProcDecision> implements Serializab
 
     public void setNextNodeId(Long nextNodeId) {
         this.nextNodeId = nextNodeId;
+    }
+
+    public String getPosition() {
+        return position;
+    }
+
+    public void setPosition(String position) {
+        this.position = position;
     }
 
 }

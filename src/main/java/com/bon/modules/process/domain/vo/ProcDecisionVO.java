@@ -4,7 +4,7 @@ import java.util.*;
 import java.io.Serializable;
 
 /**
- * @Created：2018-08-28
+ * @Created：2018-08-29
  * @Author Albert
  * @Version: 1.0
  * @Description: ProcDecision视图类
@@ -32,6 +32,8 @@ public class ProcDecisionVO implements Serializable{
     private String decisionInfo;
 
     private Long nextNodeId;
+
+    private String position;
 
     public Long getDecisionId() {
         return decisionId;
@@ -111,6 +113,14 @@ public class ProcDecisionVO implements Serializable{
 
     public void setNextNodeId(Long nextNodeId) {
         this.nextNodeId = nextNodeId;
+    }
+
+    public String getPosition() {
+        return position;
+    }
+
+    public void setPosition(String position) {
+        this.position = position;
     }
 
 }
